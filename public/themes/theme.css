@@ -1,0 +1,256 @@
+* {
+	font-size: 10pt;
+}
+
+body {
+	background-color: #cce0fb;
+	min-width: 275px;
+}
+#navtop {
+	border: none;
+	border-bottom: 1px solid black;
+}
+#navtop.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
+	min-height: 40px;
+}
+#navtop.navbar-inverse {
+	background: #001531;
+}
+#navtop.navbar-inverse .navbar-brand {
+	color: #fff;
+}
+
+#header {
+	background-color: #00337D;
+}
+
+#header .header-left {
+	padding: 10px 0 0 35px;
+	height: 110px;
+}
+
+#header .logougm {
+	background: transparent url('img/unlam.png') no-repeat 0 0;
+	background-size:cover;
+	float: left;
+	height: 80px;
+	width: 80px;
+}
+
+#header h2, h3 {
+	color: #fff;
+	margin: 0 0 0 70px;
+	text-transform: uppercase;
+}
+
+#header h2 {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+#header h3 {
+	font-size: 20px;
+}
+
+#header .header-right {
+	background: transparent url('img/gedung_ugm.jpg') no-repeat 0 0;
+	background-size:cover;
+	height: 110px;
+}
+.navmain {
+	background: transparent url('img/bg_mainnav-middle.jpg') repeat-x 0 0;
+}
+
+
+.navbar-nav > li > a {
+	color: #fff;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-transform: uppercase;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a.clock{
+	color: red;
+	font-weight: bold;
+}
+/***
+
+.navmain .navmain-left {
+	background: transparent url('../img/bg_mainnav-right.jpg') no-repeat right 0;
+}
+
+.navmain .navbar-nav {
+	background: transparent url('../img/bg_mainnav-left.jpg') no-repeat left 0;
+	margin-left: -15px;
+	padding: 0;
+}
+
+.navbar-nav li {
+	border-right: 1px solid #2b384b;
+}
+/***/
+
+
+#footer {
+	background: #00337D; 
+}
+
+#footer p {
+	background: #00337D url('img/badgeugm-footer.jpg') no-repeat center -15px; 
+	color: #fff;
+	padding: 30px 0;
+}
+
+#footer .fill {
+	background: #cce0fb url('img/badgeugm-footer.jpg') no-repeat top center; 
+	height:15px;
+}
+
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active {
+  color:#fff;
+}
+
+#content .container {
+	background-color: #fff;
+	padding-top: 15px;
+	min-height: 400px;
+}
+
+.badge {
+  padding: 3px 9px 4px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+.badge:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.badge-error {
+  background-color: #b94a48;
+}
+.badge-error:hover {
+  background-color: #953b39;
+}
+.badge-warning {
+  background-color: #f89406;
+}
+.badge-warning:hover {
+  background-color: #c67605;
+}
+.badge-success {
+  background-color: #468847;
+}
+.badge-success:hover {
+  background-color: #356635;
+}
+.badge-info {
+  background-color: #3a87ad;
+}
+.badge-info:hover {
+  background-color: #2d6987;
+}
+.badge-inverse {
+  background-color: #333333;
+}
+.badge-inverse:hover {
+  background-color: #1a1a1a;
+}
+
+blockquote{
+	font-size: 10pt;
+}
+.list-group .active a {
+	color: #fff;
+}
+.equal, .equal > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+.breadcrumb {
+	background-color: transparent;
+	padding: 0 0 0 30px;
+}
+.icon_counter_red {
+    background-color      : #f00;
+}
+ 
+.icon_counter_blue {
+    background-color      : #39f;
+}
+ 
+.icon_counter_green {
+    background-color      : #3c3;
+}
+ 
+.icon_counter {
+    color                 : #fff;
+    /***
+    font-family           : "Arial";
+    font-size             : 14px;
+    /**/
+    font-weight           : 600;
+    
+    position              : absolute;
+ 
+    padding               : 0px 2px;
+    margin-top            : 6px;
+    margin-left           : -3px;
+ 
+    -webkit-border-radius : 3px;
+    -moz-border-radius    : 3px;
+    border-radius         : 3px;
+ 
+    -webkit-box-shadow    : inset 0px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow       : inset 0px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow            : inset 0px 0px 2px 0px rgba(50, 50, 50, 0.75);
+}
+
+@media print {
+  * {
+    font-family: 'Source Code Pro', 'Courier New', Courier;
+    font-size: 8pt;
+  }
+
+  /***
+  .table thead > tr > th { 
+    border-top: 3px solid #DDDDDD;
+    border-bottom: 3px solid #DDDDDD;
+  }
+  /***/
+
+  #codeigniter_profiler, #ugm-debug {
+    display: none;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+  .btn-danger,
+  .btn-success{
+    border:none;
+    padding: 0;
+  }
+  
+  .lebar {
+	width:100%;
+	font-size:50px;
+  }
+}

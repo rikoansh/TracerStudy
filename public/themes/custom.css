@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lebar {
+	width:100%;
+}
+
+.studi label {
+	font-size:13px;
+	padding-top:15px;
+}
+
+.dua p {
+	padding-top:15px;
+}
+
+.angka label {
+	font-size:15px;
+	padding-top:13px;
+}
+
+.entry-headers h1.entry-titles {
+    margin: 0px 0px 0px 0px;
+    text-transform: uppercase;
+    font-family: 'raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #222;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+.posted-on {
+	font-size:11px;
+}
+
+article {
+	margin-bottom:10px;
+}
