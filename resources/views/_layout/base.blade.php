@@ -56,7 +56,9 @@
           <div class="col-md-12">
             <div class="col-md-4 col-md-push-8">
 
-                
+                <button class="btn btn-primary lebar" >
+                <a href="{{ route('getLogin') }}">Login Alumni</a>
+                </button><br><br>
 
 
   <div class="panel panel-info">

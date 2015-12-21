@@ -23,7 +23,7 @@
           <li><a href="{{ route('getLogout')}}">Logout</a></li>
           @else
           <li><a href="{{route('home')}}">Home</a></li>
-          @endif
+            @endif
         </ul>
           </div>
         </div>

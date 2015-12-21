@@ -17,10 +17,13 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="//unlam.ac.id/">Uiversitas Lambung Mangkurat</a></li>
             <li><a href="//ft.unlam.ac.id/">Fakultas Teknik</a></li>
-
+            <li><a href="//#">#Blank</a></li>
+            <li><a href="//#">#Blank</a></li>
           </ul>
     
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="//#">#Blank</a></li>
+            <li><a href="//#">#Blank</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
