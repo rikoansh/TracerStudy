@@ -9,9 +9,12 @@ use App\Kontak;
 use App\Berita;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\BeritaRequest;
 use App\Http\Requests\KontakRequest;
 use App\Http\Controllers\Controller;
+use Auth;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -65,11 +68,27 @@ class AdminController extends Controller
 
 	public function update_user(UserRequest $request, $username)
 	{
-		$user = User::whereUsername($username)->firstOrFail();
-		$newpassword = input::get('password');
-		$oldpassword = User::findOrFail(5)->password;
+		$user = Auth::user();
 
-		if(bcrypt::check($newpassword, $oldpassword)){
+        $password_lama = $request->input('password_lama');
+
+        if (!Hash::check($password_lama, $user->password))
+        {
+            return redirect()->back()->with('error', 'Password lama yang anda masukkan salah.');
+        }
+
+        if ($request->input('password') == '')
+        {
+            $input['password'] = $user->password;
+        }
+        else
+        {
+            $input['password'] = bcrypt($request->input('password'));
+        }
+
+       return redirect()->route('admin::user')->with('message', 'Profil user telah diupdate...');
+
+		/*if(bcrypt::check($newpassword, $oldpassword)){
 			$tes = User::findOrFail(5);
 			$tes->password = bcrypt::make(input::get('newpassword'));
 			$tes->save();
@@ -79,8 +98,48 @@ class AdminController extends Controller
 		}
 
 		$input = $request->all();
-		return redirect()->route('admin::user');
+		return redirect()->route('admin::user');*/
 	}
+
+	public function setting()
+	{
+		return view('admin/setting');
+	}
+
+	public function updatesetting(PasswordRequest $request)
+	{
+		$user = Auth::user();
+
+        $password_lama = $request->input('password_lama');
+
+        if (!Hash::check($password_lama, $user->password))
+        {
+            return redirect()->back()->with('error', 'Password lama yang anda masukkan salah.');
+        }
+
+        if ($request->input('password') == '')
+        {
+            $input['password'] = $user->password;
+        }
+        else
+        {
+            $input['password'] = bcrypt($request->input('password'));
+        }
+
+       return redirect()->route('admin::setting')->with('message', 'Profil user telah diupdate...');
+
+		/*if(bcrypt::check($newpassword, $oldpassword)){
+			$tes = User::findOrFail(5);
+			$tes->password = bcrypt::make(input::get('newpassword'));
+			$tes->save();
+		}
+		else{
+			var_dump('gagal');
+		}
+
+		$input = $request->all();
+		return redirect()->route('admin::user');*/
+	}	
 
 	public function tampilhapus_user($username)
 	{

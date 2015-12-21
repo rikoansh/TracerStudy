@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('home', [
+*/
+Route::get('/', [
             'as' => 'home', 'uses' => 'BeritaController@home'
         ]);
 
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
-        Route::get('kontak', [
+        Route::get('home/kontak', [
                 'as' => 'kontak', 'uses' => 'BeritaController@kontak'
+            ]);
+
+        Route::get('home/setting', [
+                'as' => 'setting', 'uses' => 'BeritaController@setting'
             ]);
 });
 
@@ -60,6 +64,13 @@ Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
         Route::get('admin', [
             'as' => 'tes', 'uses' => 'AdminController@tes'
         ]);
+
+        Route::get('admin/setting', [
+            'as' => 'setting', 'uses' => 'AdminController@setting']);
+
+        Route::patch('admin/setting', [
+            'as' => 'updatesetting', 'uses' => 'AdminController@updatesetting']);
+
         #user
         Route::get('admin/user', [
             'as' => 'user', 'uses' => 'AdminController@user']);
