@@ -13,7 +13,7 @@
           <li><a href="#">Form Tarcer Study</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="{{ route('home::kontak') }}">Kontak</a></li>
-          <li><a href="{{ route('home::setting')}}">Setting Profile</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
           <li><a href="{{ route('getLogout')}}">Logout</a></li>
             @endif
         </ul>
