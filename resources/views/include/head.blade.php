@@ -4,7 +4,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ asset('themes/img/unlam.png')}}">
 
-    <title>Tracer Study :: Fakultas Teknik</title>
+    <title>Tracer Study :: Universitas Lambung Mangkurat</title>
 
     <link rel="stylesheet" href="{{ asset('themes/bootstrap/css/bootstrap-3.1.1.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('themes/bootstrap/css/bootstrap-theme-3.1.1.min.css')}}" />

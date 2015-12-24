@@ -21,6 +21,12 @@ class BeritaController extends Controller
 		return view('alumni/kontak',compact('no'));
 	}
 
+	public function tracerstudy()
+	{
+		$no = 1;
+		return view('alumni/tracer',compact('no'));
+	}
+
 	public function setting()
 	{
 		$no = 1;

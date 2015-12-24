@@ -5,21 +5,6 @@
   </head>
   
   <body>
-    <div class="container">
-      <div class="row visible-print">
-        <div class="col-md-12">
-          <p>
-            <strong>Fakultas Teknik</strong>
-            <span class="pull-right"><strong>Tracer Study</strong></span>
-          </p>
-          <p>
-            <strong>&nbsp;</strong>
-            <span class="pull-right"><strong>&nbsp;</strong></span>
-          </p>
-          <hr />
-        </div>
-      </div>
-    </div>
 
     <script type="text/javascript" src="{{ asset('themes/js/jquery-1.10.2.js')}}"></script>
     <script type="text/javascript" src="{{ asset('themes/js/jquery.countdown.min.js')}}"></script>
@@ -37,9 +22,10 @@
         <div class="row hidden-xs">
           <div class="col-md-6 header-left">
             <div class="logougm"></div>
+            <div class="geser1">
             <h2>Tracer Study</h2>
-            <h3>Fakultas Teknik</h3>
             <h3>Universitas Lambung Mangkurat</h3>
+            </div>
           </div>
           <div class="col-md-6 header-right hidden-sm">
             &nbsp;
@@ -47,7 +33,22 @@
     </div>
 
     <div class="row navmain navbar-inverse">
-    @yield('nav')
+    <div id="navmain" class="col-md-12 navmain-left collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          @if(Auth::guest())
+          <li><a href="{{route('home')}}">Home</a></li>
+          @else
+          <li><a href="{{route('getLogin')}}">Home</a></li>
+          <li><a href="{{ route('home::tracerstudy') }}">Form Tarcer Study</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="{{ route('home::kontak') }}">Kontak</a></li>
+          <li><a href="{{ route('home::setting')}}">Setting Profile</a></li>
+          <li><a href="{{ route('getLogout')}}">Logout</a></li>
+            @endif
+        </ul>
+          </div>
+        </div>
+      </div>
     </div> <!-- #header -->
 
     <div id="content">
@@ -57,7 +58,9 @@
             <div class="col-md-4 col-md-push-8">
 
                 
-
+                
+                <a class="btn btn-primary lebar" href="{{ route('getLogin') }}">Login Alumni</a>
+                <br><br>
 
   <div class="panel panel-info">
     @include('include/sidebar2')
@@ -79,31 +82,10 @@
       })
   </script>
 
-  <div class="row">
-  <center>
+    @yield('slideshow')
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      @yield('slideshow')
-    </div> <!-- Carousel -->
-    </center>
-    </div>
-
-      <p>&nbsp;</p>
-
-      <p class="text-justify"><strong class="text-danger">Tracer study</strong> ini dilaksanakan untuk <strong class="text-danger">menjaring informasi/masukan dari alumni</strong> sebagai
-      salah satu dasar yang sangat penting bagi  evaluasi dan pengembangan Fakultas Teknik UNLAM, Fakultas dan prodi
-      dalam bidang kurikulum, proses pembelajaran, sarana prasarana, dan pelayanan.</p>
-
-      <p class="text-justify"><strong class="text-danger">Data/informasi bersifat rahasia</strong>, sehingga tidak akan dipindah tangankan tanpa seijin yang bersangkutan
-      dan semata-mata hanya digunakan untuk pengembangan.</p>
+    @yield('konten')
+      
     </div>
   </div><!-- panel -->
 </div><!-- col-md-7 -->

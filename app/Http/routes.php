@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('home', [
+*/
+Route::get('/', [
             'as' => 'home', 'uses' => 'BeritaController@home'
         ]);
 
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
         Route::get('home/kontak', [
                 'as' => 'kontak', 'uses' => 'BeritaController@kontak'
+            ]);
+
+        Route::get('home/tracerstudy', [
+                'as' => 'tracerstudy', 'uses' => 'BeritaController@tracerstudy'
             ]);
 
         Route::get('home/setting', [

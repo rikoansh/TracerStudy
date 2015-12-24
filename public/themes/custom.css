@@ -40,3 +40,12 @@ a:hover {
 article {
 	margin-bottom:10px;
 }
+
+.geser1 {
+	padding-top: 10px;
+}
+
+.col-md-full {
+    width: 97%;
+    margin-left: 10px;
+}
