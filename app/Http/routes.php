@@ -15,7 +15,7 @@
     return view('welcome');
 });
 */
-Route::get('home', [
+Route::get('/', [
             'as' => '/', 'uses' => 'BeritaController@home'
         ]);
 
@@ -57,14 +57,38 @@ Route::group(['as' => 'kemahasiswaan::', 'middleware' => ['role:kemahasiswaan']]
 });
 
 Route::group(['as' => 'rektor::', 'middleware' => ['role:rektor']], function () {
-        Route::get('homeRektor', [
+        Route::get('rektor/home', [
                 'as' => 'homeRektor', 'uses' => 'RektorController@home'
+            ]);
+
+        Route::get('rektor/tracerstudy', [
+                'as' => 'tracerstudy', 'uses' => 'RektorController@tracerstudy'
+            ]);
+
+        Route::get('rektor/laporan', [
+                'as' => 'laporan', 'uses' => 'RektorController@laporan'
+            ]);
+
+        Route::get('rektor/setting', [
+                'as' => 'setting', 'uses' => 'RektorController@settingRektor'
             ]);
 });
 
 Route::group(['as' => 'dekan::', 'middleware' => ['role:dekan']], function () {
-        Route::get('homeDekan', [
-                'as' => 'homeDekan', 'uses' => 'RektorController@home'
+         Route::get('dekan/home', [
+                'as' => 'homeRektor', 'uses' => 'DekanController@home'
+            ]);
+
+        Route::get('dekan/tracerstudy', [
+                'as' => 'tracerstudy', 'uses' => 'DekanController@tracerstudy'
+            ]);
+
+        Route::get('dekan/laporan', [
+                'as' => 'laporan', 'uses' => 'DekanController@laporan'
+            ]);
+
+        Route::get('dekan/setting', [
+                'as' => 'setting', 'uses' => 'DekanController@settingRektor'
             ]);
 });
 

@@ -15,4 +15,21 @@ class RektorController extends Controller
 		$no = 1;
 		return view('rektor/home',compact('no'));
 	}
+
+	public function tracerstudy()
+	{
+		$no = 1;
+		return view('rektor/tracerstudy',compact('no'));
+	}
+	public function laporan()
+	{
+		$no = 1;
+		return view('rektor/laporan',compact('no'));
+	}
+
+	public function setting()
+	{
+		$no = 1;
+		return view('rektor/setting',compact('no'));
+	}
 }
