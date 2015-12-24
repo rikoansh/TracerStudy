@@ -26,8 +26,8 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
     protected $username= 'username'; //defaultnya email
     protected $loginPath= '/login'; //default nya auth/login
-    protected $redirectPath = '/home';
-    protected $redirectAfterLogout = '/home';
+    protected $redirectPath = '/';
+    protected $redirectAfterLogout = '/';
     /**
      * Create a new authentication controller instance.
      *

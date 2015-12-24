@@ -15,10 +15,22 @@ class BeritaController extends Controller
 		return view('alumni/home',compact('no'));
 	}
 
-	public function kontak()
+	public function komentar()
 	{
 		$no = 1;
-		return view('alumni/kontak',compact('no'));
+		return view('alumni/komentar',compact('no'));
+	}
+
+	public function berita()
+	{
+		$no = 1;
+		return view('alumni/berita',compact('no'));
+	}
+
+	public function laporan()
+	{
+		$no = 1;
+		return view('alumni/laporan',compact('no'));
 	}
 
 	public function tracerstudy()

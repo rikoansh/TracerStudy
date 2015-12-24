@@ -36,13 +36,14 @@
     <div id="navmain" class="col-md-12 navmain-left collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           @if(Auth::guest())
-          <li><a href="{{route('home')}}">Home</a></li>
+          <li><a href="{{route('/')}}">Home</a></li>
           @else
           <li><a href="{{route('getLogin')}}">Home</a></li>
           <li><a href="{{ route('home::tracerstudy') }}">Form Tarcer Study</a></li>
-          <li><a href="berita.html">Berita</a></li>
-          <li><a href="{{ route('home::kontak') }}">Kontak</a></li>
-          <li><a href="{{ route('home::setting')}}">Setting Profile</a></li>
+          <li><a href="{{ route('home::beritaAlumni') }}">Berita</a></li>
+          <li><a href="{{ route('home::komentarAlumni') }}">Komentar</a></li>
+          <li><a href="{{ route('home::laporanAlumni') }}">Laporan </a></li>
+          <li><a href="{{ route('home::settingAlumni')}}">Setting Profile</a></li>
           <li><a href="{{ route('getLogout')}}">Logout</a></li>
             @endif
         </ul>
@@ -56,12 +57,11 @@
         <div class="row">
           <div class="col-md-12">
             <div class="col-md-4 col-md-push-8">
-
-                
-                
+                 @if(Auth::guest())
                 <a class="btn btn-primary lebar" href="{{ route('getLogin') }}">Login Alumni</a>
-                <br><br>
 
+                <br><br>
+@endif
   <div class="panel panel-info">
     @include('include/sidebar2')
   </div><!-- panel -->

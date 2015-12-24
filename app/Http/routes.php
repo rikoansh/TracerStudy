@@ -15,23 +15,34 @@
     return view('welcome');
 });
 */
-Route::get('/', [
-            'as' => 'home', 'uses' => 'BeritaController@home'
+Route::get('home', [
+            'as' => '/', 'uses' => 'BeritaController@home'
         ]);
 
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
-        Route::get('home/kontak', [
-                'as' => 'kontak', 'uses' => 'BeritaController@kontak'
-            ]);
-
         Route::get('home/tracerstudy', [
                 'as' => 'tracerstudy', 'uses' => 'BeritaController@tracerstudy'
             ]);
 
+        Route::get('home/berita', [
+                'as' => 'beritaAlumni', 'uses' => 'BeritaController@berita'
+            ]);
+
+
+        Route::get('home/komentar', [
+                'as' => 'komentarAlumni', 'uses' => 'BeritaController@komentar'
+            ]);
+
+
+        Route::get('home/laporan', [
+                'as' => 'laporanAlumni', 'uses' => 'BeritaController@laporan'
+            ]);
+
         Route::get('home/setting', [
-                'as' => 'setting', 'uses' => 'BeritaController@setting'
+                'as' => 'settingAlumni', 'uses' => 'BeritaController@setting'
             ]);
 });
+
 
 Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function () {
         Route::get('dashboardAkademik', [
