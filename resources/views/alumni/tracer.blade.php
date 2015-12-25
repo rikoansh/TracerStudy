@@ -4,6 +4,10 @@
 
 @section('konten')
 
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Form Tracer Study</strong></div>
+    <div class="panel-body">
+
 <div class="row">
                                 <div class="col-md-full">
 
@@ -59,6 +63,9 @@
 	                                    </form>
 	                                </div>
 	                            </div>
+	                      </div>
+    </div>
+  </div><!-- panel -->
 
 @stop
 

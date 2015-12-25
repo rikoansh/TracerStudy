@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		<h1>Restricted Area</h1>
 		<p>Anda tidak bisa mengakses halaman ini!<br>
-			Klik <a href="{{ route('home')}}" class="btn btn-info" role="button">Home</a></p>
+			Klik <a href="{{ route('/')}}" class="btn btn-info" role="button">Home</a></p>
 			
 
    </div>

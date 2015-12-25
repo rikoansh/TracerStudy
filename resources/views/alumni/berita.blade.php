@@ -4,7 +4,9 @@
 
 @section('konten')
 
-<div class="panel-body">
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Berita</strong></div>
+    <div class="panel-body">
 
   <div class="row">
   <main id="main" class="site-main" role="main">
@@ -76,6 +78,8 @@
 
     </div>
   </div>
+</div>
+</div><!-- panel -->
 
 @stop
 

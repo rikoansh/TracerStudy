@@ -2,7 +2,17 @@
 
 @section('title','Home')
 
-@section('slideshow')
+@section('konten')
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Selamat datang</strong></div>
+    <div class="panel-body">
+
+  <script type="text/javascript">
+      $('.carousel').carousel({
+          interval: 300
+      })
+  </script>
 
 <div class="row">
   <center>
@@ -34,10 +44,6 @@
     </center>
     </div>
 
-@stop
-
-@section('konten')
-
 <p>&nbsp;</p>
 
       <p class="text-justify"><strong class="text-danger">Tracer study</strong> ini dilaksanakan untuk <strong class="text-danger">menjaring informasi/masukan dari alumni</strong> sebagai
@@ -46,5 +52,8 @@
 
       <p class="text-justify"><strong class="text-danger">Data/informasi bersifat rahasia</strong>, sehingga tidak akan dipindah tangankan tanpa seijin yang bersangkutan
       dan semata-mata hanya digunakan untuk pengembangan.</p>
+
+    </div>
+  </div><!-- panel -->
 
 @stop

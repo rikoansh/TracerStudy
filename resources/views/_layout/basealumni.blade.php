@@ -72,22 +72,9 @@
 </div><!-- col-md-4 -->
 
 <div class="col-md-8 col-md-pull-4">
-  <div class="panel panel-default">
-    <div class="panel-heading"><strong>Selamat datang</strong></div>
-    <div class="panel-body">
-
-  <script type="text/javascript">
-      $('.carousel').carousel({
-          interval: 300
-      })
-  </script>
-
-    @yield('slideshow')
 
     @yield('konten')
-      
-    </div>
-  </div><!-- panel -->
+    
 </div><!-- col-md-7 -->
             </div>
         </div>

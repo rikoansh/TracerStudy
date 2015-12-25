@@ -91,18 +91,18 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    <li>
+                    @if (Request::is('admin/tes')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::tes') }}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
 
-                    <li class="selected">
+                    @if (Request::is('admin/user')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::user') }}"><i class="fa fa-user fa-fw"></i>User</a>
                     </li>
 
-                    <li>
+                    @if (Request::is('admin/berita')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::berita') }}"><i class="fa fa-flask fa-fw"></i>Berita</a>
                     </li>
-                    <li>
+                    @if (Request::is('admin/kontak')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::kontak') }}"><i class="fa fa-flask fa-fw"></i>Kontak</a>
                     </li>
                     <li>
