@@ -14,4 +14,28 @@ class KemahasiswaanController extends Controller
 		$no = 1;
 		return view('kemahasiswaan/home',compact('no'));
 	}
+
+	public function user()
+	{
+		$no = 1;
+		return view('kemahasiswaan/user',compact('no'));
+	}
+
+	public function berita()
+	{
+		$no = 1;
+		return view('kemahasiswaan/berita',compact('no'));
+	}
+
+	public function useralumni()
+	{
+		$no = 1;
+		return view('kemahasiswaan/useralumni',compact('no'));
+	}
+
+	public function hasil()
+	{
+		$no = 1;
+		return view('kemahasiswaan/hasil',compact('no'));
+	}
 }

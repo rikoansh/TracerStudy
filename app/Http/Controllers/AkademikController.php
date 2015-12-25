@@ -14,4 +14,28 @@ class AkademikController extends Controller
 		$no = 1;
 		return view('akademik/home',compact('no'));
 	}
+
+	public function user()
+	{
+		$no = 1;
+		return view('akademik/user',compact('no'));
+	}
+
+	public function berita()
+	{
+		$no = 1;
+		return view('akademik/berita',compact('no'));
+	}
+
+	public function laporan()
+	{
+		$no = 1;
+		return view('akademik/laporan',compact('no'));
+	}
+
+	public function hasil()
+	{
+		$no = 1;
+		return view('akademik/hasil',compact('no'));
+	}
 }

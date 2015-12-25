@@ -48,11 +48,44 @@ Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function
         Route::get('dashboardAkademik', [
                 'as' => 'homeAkademik', 'uses' => 'AkademikController@home'
             ]);
+
+        Route::get('dashboardAkademik/usermaba', [
+                'as' => 'user', 'uses' => 'AkademikController@user'
+            ]);
+
+        Route::get('dashboardAkademik/berita', [
+                'as' => 'berita', 'uses' => 'AkademikController@berita'
+            ]);
+
+        Route::get('dashboardAkademik/laporan', [
+                'as' => 'laporan', 'uses' => 'AkademikController@laporan'
+            ]);
+        
+        Route::get('dashboardAkademik/hasil', [
+                'as' => 'hasil', 'uses' => 'AkademikController@hasil'
+            ]);
 });
+
 
 Route::group(['as' => 'kemahasiswaan::', 'middleware' => ['role:kemahasiswaan']], function () {
         Route::get('dashboardKemahasiswaan', [
                 'as' => 'homeKemahasiswaan', 'uses' => 'KemahasiswaanController@home'
+            ]);
+
+        Route::get('dashboardKemahasiswaan/usermaba', [
+                'as' => 'user', 'uses' => 'KemahasiswaanController@user'
+            ]);
+
+        Route::get('dashboardKemahasiswaan/berita', [
+                'as' => 'berita', 'uses' => 'KemahasiswaanController@berita'
+            ]);
+
+        Route::get('dashboardKemahasiswaank/useralumni', [
+                'as' => 'useralumni', 'uses' => 'KemahasiswaanController@useralumni'
+            ]);
+        
+        Route::get('dashboardKemahasiswaan/hasil', [
+                'as' => 'hasil', 'uses' => 'KemahasiswaanController@hasil'
             ]);
 });
 
@@ -100,7 +133,7 @@ Route::group(['as' => 'prodi::', 'middleware' => ['role:prodi']], function () {
 
 Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
 
-        Route::get('admin', [
+        Route::get('admin/tes', [
             'as' => 'tes', 'uses' => 'AdminController@tes'
         ]);
 

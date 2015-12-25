@@ -78,16 +78,16 @@ class AuthController extends Controller
         }
         if (Entrust::hasRole('admin'))
         {
-            return redirect()->intended('admin');
+            return redirect()->intended('admin/tes');
         }
         elseif (Entrust::hasRole('akademik'))
         {
-            return redirect()->intended('akademik/home');
+            return redirect()->intended('dashboardAkademik');
         }
 
         elseif (Entrust::hasRole('kemahasiswaan'))
         {
-            return redirect()->intended('kemahasiswaan/home');
+            return redirect()->intended('dashboardKemahasiswaan');
         }
 
         elseif (Entrust::hasRole('rektor'))
