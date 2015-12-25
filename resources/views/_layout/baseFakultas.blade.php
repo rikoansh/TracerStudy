@@ -91,26 +91,25 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    @if (Request::is('dashboardAkademik')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::homeAkademik') }}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                    @if (Request::is('dashboardfakultas')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::homefakultas') }}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
 
-                    @if (Request::is('dashboardAkademik/usermaba')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::user') }}"><i class="fa fa-user fa-fw"></i>User Mahasiswa</a>
-                    </li>
-
-                    @if (Request::is('dashboardAkademik/berita')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::berita') }}"><i class="fa fa-flask fa-fw"></i>Berita</a>
+                    @if (Request::is('dashboardFakultas/usermaba')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::user') }}"><i class="fa fa-user fa-fw"></i>User Mahasiswa</a>
                     </li>
 
                     </li>
-                    @if (Request::is('dashboardAkademik/laporan')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::laporan') }}"><i class="fa fa-flask fa-fw"></i>Laporan</a>
+                    @if (Request::is('dashboardFakultas/useralumni')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::useralumni') }}"><i class="fa fa-flask fa-fw"></i>User Alumni</a>
                     </li>
 
-                    
-                    @if (Request::is('dashboardAkademik/hasil')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::hasil') }}"><i class="fa fa-flask fa-fw"></i>Hasil TS</a>
+                    @if (Request::is('dashboardFakultas/berita')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::berita') }}"><i class="fa fa-flask fa-fw"></i>Berita</a>
+                    </li>
+
+                    @if (Request::is('dashboardFakultas/hasil')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::hasil') }}"><i class="fa fa-flask fa-fw"></i>Hasil TS</a>
                     </li>
                 </ul>
                 <!-- end side-menu -->

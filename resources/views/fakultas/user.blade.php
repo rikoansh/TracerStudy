@@ -1,6 +1,6 @@
-@extends('_layout/baseAkademik')
+@extends('_layout/baseFakultas')
 
-@section('title','home')
+@section('title','user')
 
 
 @section('isi')

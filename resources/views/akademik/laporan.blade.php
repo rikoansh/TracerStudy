@@ -1,6 +1,6 @@
 @extends('_layout/baseAkademik')
 
-@section('title','home')
+@section('title','laporan')
 
 
 @section('isi')

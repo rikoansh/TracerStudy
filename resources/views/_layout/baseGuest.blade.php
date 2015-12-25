@@ -38,13 +38,8 @@
           @if(Auth::guest())
           <li><a href="{{route('/')}}">Home</a></li>
           @else
-          <li><a href="{{ route('home::home')}}">Home</a></li>
-          <li><a href="{{ route('home::tracerstudy') }}">Form Tarcer Study</a></li>
-          <li><a href="{{ route('home::beritaAlumni') }}">Berita</a></li>
-          <li><a href="{{ route('home::komentarAlumni') }}">Komentar</a></li>
-          <li><a href="{{ route('home::laporanAlumni') }}">Laporan </a></li>
-          <li><a href="{{ route('home::settingAlumni')}}">Setting Profile</a></li>
-          <li><a href="{{ route('getLogout')}}">Logout</a></li>
+          <li><a href="{{route('/')}}">Home</a></li>
+          <li><a href="{{route('getLogout')}}">Log Out</a></li>
             @endif
         </ul>
           </div>

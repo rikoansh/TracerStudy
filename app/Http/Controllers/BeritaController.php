@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class BeritaController extends Controller
 {
+	public function homeutama()
+	{
+		$no = 1;
+		return view('guest/homeutama',compact('no'));
+	}
+
     public function home()
 	{
 		$no = 1;

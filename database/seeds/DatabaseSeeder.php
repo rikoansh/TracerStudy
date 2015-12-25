@@ -40,8 +40,8 @@ class DatabaseSeeder extends Seeder
         $dekan = App\User::find(5);
         $dekan->attachRole(5);
 
-        $kemahasiswaan = App\User::find(6);
-        $kemahasiswaan->attachRole(6);
+        $fakultas = App\User::find(6);
+        $fakultas->attachRole(6);
 
         $prodi = App\User::find(7);
         $prodi->attachRole(7);

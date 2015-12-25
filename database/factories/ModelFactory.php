@@ -61,11 +61,11 @@ $factory->defineAs(App\Role::class, 'dekan', function (Faker\Generator $faker) {
     ];
 });
 
-$factory->defineAs(App\Role::class, 'kemahasiswaan', function (Faker\Generator $faker) {
+$factory->defineAs(App\Role::class, 'fakultas', function (Faker\Generator $faker) {
     return [
-        'name' => 'kemahasiswaan',
-        'display_name' => 'Kemahasiswaan',
-        'description' => 'Pengguna Kemahasiswaan',
+        'name' => 'fakultas',
+        'display_name' => 'fakultas',
+        'description' => 'Pengguna Fakultas',
     ];
 });
 
@@ -125,11 +125,11 @@ $factory->defineAs(App\User::class, 'prodi', function (Faker\Generator $faker) {
     ];
 });
 
-$factory->defineAs(App\User::class, 'kemahasiswaan', function (Faker\Generator $faker) {
+$factory->defineAs(App\User::class, 'fakultas', function (Faker\Generator $faker) {
     return [
-        'username' => 'kemahasiswaan',
-        'email' => 'kemahasiswaan@localhost.com',
-        'password' => bcrypt('kemahasiswaan'),
+        'username' => 'fakultas',
+        'email' => 'fakultas@localhost.com',
+        'password' => bcrypt('fakultas'),
     ];
 });
 

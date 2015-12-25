@@ -16,10 +16,15 @@
 });
 */
 Route::get('/', [
-            'as' => '/', 'uses' => 'BeritaController@home'
+            'as' => '/', 'uses' => 'BeritaController@homeutama'
         ]);
 
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
+        
+        Route::get('home', [
+            'as' => 'home', 'uses' => 'BeritaController@home'
+        ]);
+
         Route::get('home/tracerstudy', [
                 'as' => 'tracerstudy', 'uses' => 'BeritaController@tracerstudy'
             ]);
@@ -67,25 +72,25 @@ Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function
 });
 
 
-Route::group(['as' => 'kemahasiswaan::', 'middleware' => ['role:kemahasiswaan']], function () {
-        Route::get('dashboardKemahasiswaan', [
-                'as' => 'homeKemahasiswaan', 'uses' => 'KemahasiswaanController@home'
+Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function () {
+        Route::get('dashboardfakultas', [
+                'as' => 'homefakultas', 'uses' => 'FakultasController@home'
             ]);
 
-        Route::get('dashboardKemahasiswaan/usermaba', [
-                'as' => 'user', 'uses' => 'KemahasiswaanController@user'
+        Route::get('dashboardFakultas/usermaba', [
+                'as' => 'user', 'uses' => 'FakultasController@user'
             ]);
 
-        Route::get('dashboardKemahasiswaan/berita', [
-                'as' => 'berita', 'uses' => 'KemahasiswaanController@berita'
+        Route::get('dashboardFakultas/berita', [
+                'as' => 'berita', 'uses' => 'FakultasController@berita'
             ]);
 
-        Route::get('dashboardKemahasiswaank/useralumni', [
-                'as' => 'useralumni', 'uses' => 'KemahasiswaanController@useralumni'
+        Route::get('dashboardFakultas/useralumni', [
+                'as' => 'useralumni', 'uses' => 'FakultasController@useralumni'
             ]);
         
-        Route::get('dashboardKemahasiswaan/hasil', [
-                'as' => 'hasil', 'uses' => 'KemahasiswaanController@hasil'
+        Route::get('dashboardFakultas/hasil', [
+                'as' => 'hasil', 'uses' => 'FakultasController@hasil'
             ]);
 });
 

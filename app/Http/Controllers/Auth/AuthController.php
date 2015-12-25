@@ -85,9 +85,9 @@ class AuthController extends Controller
             return redirect()->intended('dashboardAkademik');
         }
 
-        elseif (Entrust::hasRole('kemahasiswaan'))
+        elseif (Entrust::hasRole('fakultas'))
         {
-            return redirect()->intended('dashboardKemahasiswaan');
+            return redirect()->intended('dashboardfakultas');
         }
 
         elseif (Entrust::hasRole('rektor'))
