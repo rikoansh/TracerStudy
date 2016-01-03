@@ -49,3 +49,23 @@ article {
     width: 97%;
     margin-left: 10px;
 }
+
+.alert-pakai {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.label-pakai {
+	width: 110px;
+}
+
+.label-pakai-kiri {
+	width: 110px;
+	margin-left: 10px;
+}
+
+btn-lebar {
+	width: 200px;
+}
