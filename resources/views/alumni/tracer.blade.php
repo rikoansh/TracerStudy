@@ -8,6 +8,8 @@
     <div class="panel-heading"><strong>Form Tracer Study</strong></div>
     <div class="panel-body">
 
+<!--BATAS KUISIONER-->
+
 <div class="row">
         <div class="col-md-full">
 
@@ -316,12 +318,531 @@
 							  	<div class="tab-content">
 							    <div id="id3" class="tab-pane fade in active">
 
-<!--B2-->				ini coba
+<!--B2-->				<div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B2 Seberapa besar alasan­alasan dibawah ini menyebabkan ketidaktepatan masa studi Anda? Mohon diisi semuanya</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Besar</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Tidak sama sekali</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b2a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2a" id="optionsRadios2" value="1"></td>
+                                            <td>Alasan keuangan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b2b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2b" id="optionsRadios2" value="1"></td>
+                                            <td>Tidak lulus ujian (banyak mengulang)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b2c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2c" id="optionsRadios2" value="1"></td>
+                                            <td>Penulisan skripsi lambat</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b2d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2d" id="optionsRadios2" value="1"></td>
+                                            <td>Alasan keluarga</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b2e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b2e" id="optionsRadios2" value="1"></td>
+                                            <td>Kesehatan</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+                        </div>   
 
 												</div>
 <!--BATAS JQUERY PA ALKAF TAMPIL-->		        </div>
 
-                    </div>
+<!--B3-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B3 Selama kuliah kebanyakan Anda tinggal dimana?</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b3" id="optionsRadios1" value="option1" checked="">Sendiri di asrama
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b3" id="optionsRadios2" value="option2">Sendiri di tempat kos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b3" id="optionsRadios2" value="option2">Bersama orangtua/keluarga
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b3" id="optionsRadios2" value="option2">Bersama keluarga
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b3" id="optionsRadios2" value="option2">Berbagi kamar kos/apartemen
+                                </label>
+                            </div>
+                        </div>
+
+<!--B4-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B4 Siapa yang terutama membiayai kuliah Anda?</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b4" id="optionsRadios1" value="option1" checked="">Beasiswa (misalnya dari pemerintah, universitas)
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b4" id="optionsRadios2" value="option2">Sebagian beasiswa
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b4" id="optionsRadios2" value="option2">Orang tua/keluarga
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b4" id="optionsRadios2" value="option2">Biaya sendiri
+                                </label>
+                            </div>
+                        </div>
+
+<!--B5-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B5 Selama kuliah, apakah Anda menjadi anggota dari suatu organisasi (sosial, pemuda, organisasi keagamaan) di dalam atau di luar kampus?</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="has_submenu3" name="has_child3" value="1">Ya
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="no_submenu3" name="has_child3" value="0">Tidak
+                                </label>
+                            </div>
+                        </div>
+
+<!--JQUERY PA ALKAF TAMPIL-->   <div id="singlemenu3">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="has_child3" value="1">
+                                <div class="tab-content">
+                                <div id="id3" class="tab-pane fade in active">
+
+<!--B6-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B6 Seberapa aktif Anda di organisasi tersebut?</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Aktif</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Pasif</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b6" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b6" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b6" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b6" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b6" id="optionsRadios2" value="1"></td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+                        </div>   
+
+                                                </div>
+<!--BATAS JQUERY PA ALKAF TAMPIL-->             </div>
+
+<!--B7-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B7 Pada saat Anda kuliah di perguruan tinggi, apakah Anda mengambil kursus atau pendidikan tambahan?</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b7" id="optionsRadios1" value="option1" checked="">Ya
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="b7" id="optionsRadios2" value="option2">Tidak
+                                </label>
+                            </div>
+                        </div>
+
+<!--B8-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B8 Menurut Anda seberapa besar penekanan pada aspek­aspek pembelajaran di bawah ini dilaksanakan di program studi Anda?</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Besar</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Tidak sama sekali</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8a" id="optionsRadios2" value="1"></td>
+                                            <td>Perkuliahan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8b" id="optionsRadios2" value="1"></td>
+                                            <td>Demonstrasi (peragaan)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8c" id="optionsRadios2" value="1"></td>
+                                            <td>Partisipasi dalam proyek riset</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8d" id="optionsRadios2" value="1"></td>
+                                            <td>Magang</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8e" id="optionsRadios2" value="1"></td>
+                                            <td>Praktikum/kerja lapangan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b8f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b8f" id="optionsRadios2" value="1"></td>
+                                            <td>Diskusi</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+<!--B9-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B9 Bagaimana penilaian Anda terhadap aspek belajar mengajar di bawah ini?</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Baik</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Sangat Buruk</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b9a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9a" id="optionsRadios2" value="1"></td>
+                                            <td>Kesempatan untuk berinteraksi dengan dosen­dosen di luar jadwal kuliah</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b9b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9b" id="optionsRadios2" value="1"></td>
+                                            <td>Kesempatan berpartisipasi dalam proyek riset</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b9c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9c" id="optionsRadios2" value="1"></td>
+                                            <td>Kondisi umum belajar mengajar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b9d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b9d" id="optionsRadios2" value="1"></td>
+                                            <td>Kesempatan untuk memasuki dan menjadi bagian dari jejaring ilmiah profesional</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+<!--B10-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B10 Bagaimana penilaian Anda terhadap kondisi fasilitas belajar di bawah ini? Mohon diisi semuanya</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Baik</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Sangat Buruk</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10a" id="optionsRadios2" value="1"></td>
+                                            <td>Perpustakaan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10b" id="optionsRadios2" value="1"></td>
+                                            <td>Teknologi Informasi dan Komunikasi</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10c" id="optionsRadios2" value="1"></td>
+                                            <td>Modus belajar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10d" id="optionsRadios2" value="1"></td>
+                                            <td>Ruang belajar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10e" id="optionsRadios2" value="1"></td>
+                                            <td>Laboratorium</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10f" id="optionsRadios2" value="1"></td>
+                                            <td>Variasi matakuliah yang ditawarkan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10g" id="optionsRadios2" value="1"></td>
+                                            <td>Akomodasi</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10h" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10h" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10h" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10h" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10h" id="optionsRadios2" value="1"></td>
+                                            <td>Kantin</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10i" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10i" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10i" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10i" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10i" id="optionsRadios2" value="1"></td>
+                                            <td>Pusat kegiatan mahasiswa dan fasilitasnya, ruang rekreasi</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b10j" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10j" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10j" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10j" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b10j" id="optionsRadios2" value="1"></td>
+                                            <td>Fasilitas layanan kesehatan</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+<!--B11-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>B11 Bagaimana penilaian Anda terhadap pengalaman belajar di bawah ini? Mohon diisi semuanya</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat Baik</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Sangat Buruk</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11a" id="optionsRadios2" value="1"></td>
+                                            <td>Pembelajaran di kelas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11b" id="optionsRadios2" value="1"></td>
+                                            <td>Magang/kerja lapangan/praktikum</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11c" id="optionsRadios2" value="1"></td>
+                                            <td>Pengabdian dan penjangkauan masyarakat</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11d" id="optionsRadios2" value="1"></td>
+                                            <td>Pelaksanaan riset/penulisan skripsi</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11e" id="optionsRadios2" value="1"></td>
+                                            <td>Organisasi kemahasiswaan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11f" id="optionsRadios2" value="1"></td>
+                                            <td>Kegiatan ekstrakurikuler</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="b11g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11g" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="b11g" id="optionsRadios2" value="1"></td>
+                                            <td>Rekreasi dan olahraga</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+<!--BATAS KUISIONER--></div>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -338,7 +859,7 @@
             </div>
         </div>
 
-                    <button type="submit" class="btn btn-default" value="save">Daftar</button>
+                    <button type="submit" class="btn btn-default" value="save">Submit</button>
 
                 </form>
             </div>
