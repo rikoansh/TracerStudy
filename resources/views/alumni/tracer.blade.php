@@ -242,13 +242,13 @@
 					    <p class="help-block">Tidak bekerja, mencari pekerjaan</p>
                 		</div>
 
-<!--A1-->	            <div class="form-group">
+<!--B1-->	            <div class="form-group">
                         <div class="alert-pakai alert-warning"><strong>A14 Apa latar belakang terakhir pendidikan orang tua Anda?</strong></div>
                     	<div class="input-group">
 					      <span class="form-group input-group-btn">
 					      <label class="label-pakai">Ayah</label>
 					      </span>
-					      <select name="mk1" class="form-control">
+					      <select name="b1a" class="form-control">
                             <option value="">--Pilih--</option>
                             <option value="A">Tidak sekolah</option>
                             <option value="B+">Tidak lulus SD</option>
@@ -268,7 +268,7 @@
 					      <span class="form-group input-group-btn">
 					      <label class="label-pakai">Ibu</label>
 					      </span>
-					      <select name="mk1" class="form-control">
+					      <select name="b1b" class="form-control">
                             <option value="">--Pilih--</option>
                             <option value="A">Tidak sekolah</option>
                             <option value="B+">Tidak lulus SD</option>
@@ -842,24 +842,467 @@
 
                         </div>
 
-<!--BATAS KUISIONER--></div>
+                    </div>
                 </div>
             </div>
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">Bagian C</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">C. PENCARIAN KERJA DAN TRANSISI KE DUNIA KERJA</a>
                     </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="panel-body">
-                    	Pertanyaan Bagian C
+                    	
+<!--C1-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C1 Kapan Anda mulai mencari pekerjaan? Mohon pekerjaan sambilan tidak dimasukkan</strong></div>
+                        <div class="input-group">
+                          <input name="a13a" class="form-control" type="text" placeholder="12">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri2">bulan sebelum lulus</label>
+                          </span>
+                        </div>
+                        <p class="help-block">**Kira-kira (bulan)</p>
+                        <div class="input-group">
+                          <input name="a13b" class="form-control" type="text" placeholder="12">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri2">bulan setelah lulus</label>
+                          </span>
+                        </div>
+                        <p class="help-block">**Kira-kira (bulan)</p>   
                     </div>
+
+
+
+<!--C2-->              <div class="form-group">
+                            <div class="alert-pakai alert-warning"><strong>C2 Bagaimana Anda mencari pekerjaan setelah lulus? Jawaban bisa lebih dari satu</strong></div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1a" type="checkbox" value="">Melalui iklan di koran/majalah, brosur
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1b" type="checkbox" value="">Melamar ke perusahaan/instansi tanpa mengetahui lowongan yang ada
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1c" type="checkbox" value="">Pergi ke bursa/pameran kerja
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Mencari lewat internet/iklan online/milis
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Dihubungi oleh perusahaan/instansi
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Menghubungi Kemnakertrans
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Menghubungi agen tenaga kerja komersial/swasta
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Memperoleh informasi dari pusat/kantor pengembangan karier fakultas/universitas
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Menghubungi kantor kemahasiswaan/hubungan alumni
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Membangun network sejak masih kuliah
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Melalui relasi (misalnya dosen, orangtua, saudara, teman, dll.)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Membangun bisnis sendiri
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Melalui penempatan kerja atau magang
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Bekerja di tempat yang sama dengan tempat kerja semasa kuliah
+                                </label>
+                            </div>
+                        </div>
+
+<!--C3-->              <div class="form-group">
+                            <div class="alert-pakai alert-warning"><strong>C3 Berdasarkan persepsi Anda, aspek manakah yang dianggap penting bagi perusahaan/instansi dalam melakukan penerimaan pegawai baru? Jawaban bisa lebih dari satu</strong></div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1a" type="checkbox" value="">Program studi
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1b" type="checkbox" value="">Spesialisasi
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1c" type="checkbox" value="">IPK
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Pengalaman kerja/magang selama kuliah
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Reputasi dari perguruan tinggi
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Pengalaman ke luar negeri (untuk bekerja atau magang)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kemampuan Bahasa Inggris
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kemampuan bahasa asing lainnya
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Pengoperasian komputer
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Pengalaman berorganisasi
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Rekomendasi dari pihak ketiga
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kepribadian dan keterampilan antarpersonal
+                                </label>
+                            </div>
+                        </div>
+
+<!--C4-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C4 Berapa perusahaan/instansi/institusi yang sudah Anda lamar (lewat surat atau e­mail) sebelum Anda memperoleh pekerjaan pertama?</strong></div>
+                        <div class="input-group">
+                          <input name="a13a" class="form-control" type="text" placeholder="4">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri3">Jumlah perusahaan/instansi/institusi yang dilamar</label>
+                          </span>
+                        </div> 
+                        </div>
+
+<!--C5-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C5 Berapa bulan waktu yang dihabiskan (sebelum dan sesudah kelulusan) untuk memperoleh pekerjaan pertama?</strong></div>
+                        <div class="input-group">
+                          <input name="a13a" class="form-control" type="text" placeholder="12">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri2">bulan sebelum lulus</label>
+                          </span>
+                        </div>
+                        <p class="help-block">**Kira-kira (bulan)</p>
+                        <div class="input-group">
+                          <input name="a13b" class="form-control" type="text" placeholder="12">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri2">bulan setelah lulus</label>
+                          </span>
+                        </div>
+                        <p class="help-block">**Kira-kira (bulan)</p>   
+                    </div>
+
+<!--C6-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C6 Berapa banyak perusahaan/instansi/institusi yang merespon lamaran Anda?</strong></div>
+                        <div class="input-group">
+                          <input name="a13a" class="form-control" type="text" placeholder="4">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri3">Jumlah perusahaan/instansi/institusi</label>
+                          </span>
+                        </div> 
+                        </div>
+
+<!--C7-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C7 Berapa banyak perusahaan/instansi/institusi yang mengundang Anda untuk wawancara?</strong></div>
+                        <div class="input-group">
+                          <input name="a13a" class="form-control" type="text" placeholder="4">
+                            <span class="form-group input-group-btn">
+                            <label class="label-pakai-kiri3">Jumlah perusahaan/instansi/institusi</label>
+                          </span>
+                        </div> 
+                        </div>
+
+<!--C8-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C8 Apa alasan utama Anda tidak mencari pekerjaan setelah lulus kuliah?</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="c8" id="optionsRadios1" value="option1" checked="">Saya memulai bisnis sendiri
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="c8" id="optionsRadios2" value="option2">Saya sudah memeroleh pekerjaan sebelum lulus
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="c8" id="optionsRadios2" value="option2">Saya melanjutkan kuliah
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="c8" id="optionsRadios2" value="option2">Saya belum mencari pekerjaan
+                                </label>
+                            </div>
+                        </div>
+
+<!--C9-->              <div class="form-group">
+                            <div class="alert-pakai alert-warning"><strong>C9 Aspek apa yang menjadi pertimbangan utama Anda dalam memilih pekerjaan pertama?</strong></div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1a" type="checkbox" value="">Gaji
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1b" type="checkbox" value="">Dari rumah
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1c" type="checkbox" value="">Tantangan pekerjaan
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Benefit (perumahan, transport, uang lembur)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kesempatan beasiswa
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kenyamanan
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Minat
+                                </label>
+                            </div>
+                        </div>
+
+<!--C10-->               <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C10 Apakah Anda pernah mengambil kursus/pendidikan lanjutan dalam rangka menyiapkan atau meningkatkan kemampuan Anda untuk persiapan bekerja</strong></div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="has_submenu4" name="has_child4" value="1">Ya
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="no_submenu4" name="has_child4" value="0">Tidak
+                                </label>
+                            </div>
+                        </div>
+
+<!--JQUERY PA ALKAF TAMPIL-->   <div id="singlemenu4">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="has_child4" value="1">
+                                <div class="tab-content">
+                                <div id="id3" class="tab-pane fade in active">
+
+<!--C11-->              <div class="form-group">
+                            <div class="alert-pakai alert-warning"><strong>C11 Jenis kursus/pendidikan lanjutan apa yang Anda ambil ,jawaban bisa lebih dari satu</strong></div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1a" type="checkbox" value="">Pengoperasian komputer (MS Office dan yang sejenisnya)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1b" type="checkbox" value="">Piranti lunak aplikasi (Accurate, AutoCAD, dll)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1c" type="checkbox" value="">Bahasa Inggris
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Bahasa asing lainnya
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kepemimpinan
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kewirausahaan
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="c1d" type="checkbox" value="">Kursus keterampilan klinik
+                                </label>
+                            </div>
+                        </div>
+
+<!--C12-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C12 Bagaimana peran kursus/pendidikan lanjutan tersebut dalam hal­hal dibawah ini?</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat berperan</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Tidak sama sekali</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12a" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12a" id="optionsRadios2" value="1"></td>
+                                            <td>Memulai Pekerjaan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12b" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12b" id="optionsRadios2" value="1"></td>
+                                            <td>Mendapatkan pekerjaan yang memuaskan/sesuai harapan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12c" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12c" id="optionsRadios2" value="1"></td>
+                                            <td>Memenuhi persyaratan kompetensi untuk bekerja</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12d" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12d" id="optionsRadios2" value="1"></td>
+                                            <td>Meningkatkan keterampilan kewirausahaan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12e" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12e" id="optionsRadios2" value="1"></td>
+                                            <td>Pengembangan diri</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c12f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12f" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c12f" id="optionsRadios2" value="1"></td>
+                                            <td>Karier di masa depan</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+<!--C13-->              <div class="form-group">
+                        <div class="alert-pakai alert-warning"><strong>C13 Apakah Anda merasa perlu untuk meningkatkan kompetensi Anda dengan mengambil kursus/pendidikan lanjutan lagi?</strong></div>
+
+                        <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Sangat perlu</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Tidak perlu sama sekali</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="70px">1</td>
+                                            <td width="70px">2</td>
+                                            <td width="70px">3</td>
+                                            <td width="70px">4</td>
+                                            <td width="70px">5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="c13" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c13" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c13" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c13" id="optionsRadios2" value="1"></td>
+                                            <td><input type="radio" name="c13" id="optionsRadios2" value="1"></td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+
+                        </div>
+
+                                                </div> 
+                                                </div>
+<!--BATAS JQUERY PA ALKAF TAMPIL-->             </div>
+
+<!--BATAS KUISIONER-->
                 </div>
             </div>
         </div>
+    </div>
 
-                    <button type="submit" class="btn btn-default" value="save">Submit</button>
+                <button type="submit" class="btn btn-default" value="save">Submit</button>
 
                 </form>
             </div>

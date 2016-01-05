@@ -147,5 +147,23 @@ $(document).ready(function() {
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#singlemenu4').hide();
+  $('#hideform4').hide();
+  $('input:radio[name="has_child4"]').change(
+      function(){
+          if ($(this).is(':checked') && $(this).attr('id') == 'has_submenu4') {
+            $('#singlemenu4').show(300);
+            $('#hideform4').hide(300);
+          }
+          else if ($(this).is(':checked') && $(this).attr('id') == 'no_submenu4') {
+            $('#singlemenu4').hide(300);
+            $('#hideform4').show(300);
+          }
+      });
+});
+</script>
+
   </body>
 </html>
