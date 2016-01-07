@@ -134,6 +134,10 @@ Route::group(['as' => 'prodi::', 'middleware' => ['role:prodi']], function () {
         Route::get('dashboardProdi', [
                 'as' => 'homeProdi', 'uses' => 'ProdiController@home'
             ]);
+
+         Route::get('dashboardProdi/hasil', [
+                'as' => 'hasil', 'uses' => 'ProdiController@hasil'
+            ]);
 });
 
 Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
@@ -145,7 +149,7 @@ Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
         Route::get('admin/setting', [
             'as' => 'setting', 'uses' => 'AdminController@setting']);
 
-        Route::patch('admin/setting', [
+        Route::post('admin/setting', [
             'as' => 'updatesetting', 'uses' => 'AdminController@updatesetting']);
 
         #user

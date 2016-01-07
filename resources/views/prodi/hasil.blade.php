@@ -1,6 +1,6 @@
 @extends('_layout/baseProdi')
 
-@section('title','home')
+@section('title','hasil')
 
 
 @section('isi')

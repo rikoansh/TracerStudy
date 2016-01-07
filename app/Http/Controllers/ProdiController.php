@@ -14,4 +14,10 @@ class ProdiController extends Controller
 		$no = 1;
 		return view('prodi/home',compact('no'));
 	}
+
+	public function hasil()
+	{
+		$no = 1;
+		return view('prodi/hasil',compact('no'));
+	}
 }

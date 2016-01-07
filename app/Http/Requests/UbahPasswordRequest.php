@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UserRequest extends Request
+class UbahPasswordRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class UserRequest extends Request
     public function rules()
     {
         return [
-            'email'=>'required|email',
-            'username'=>'required',
-            'password'=>'required', 
-            'password_again'=> 'required|same:password'
-
-        ];
+           'password_lama'  => 'required|min:4',
+           'password'=>'confirmed|min:5',
+           ];
+            
     }
 }

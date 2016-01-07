@@ -1,20 +1,9 @@
-@extends('_layout/admin')
-
-@section('title','home')
-
-
-@section('isi')
-@if (Session::has('message'))
-         <div class="alert alert-info">
-            <h3>{{ Session::get('message') }}</h3>
-         </div>   
-@endif
-     <div class="panel panel-default">
+ <div class="panel panel-default">
         <div class="panel-heading">Ubah Password</div>
         <div class="panel-body">
-            <form action="{{ route('admin::updatesetting') }}" method="POST">
-            <input name="_method" type="hidden" value="PATCH">
-            {{ csrf_field() }}
+           
+            <form action="{{ route('admin::updatesetting') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
             <label><h4>Masukkan Password Lama</h4></label>
             <input type="password" name="password_lama" class="form-control">
@@ -35,5 +24,27 @@
             </div>
         </div>
     </div>
+</form>
 
-@stop
+@if (Session::has('message'))
+         <div class="alert alert-info">
+            <h3>{{ Session::get('message') }}</h3>
+         </div>   
+        @elseif (Session::has('error'))
+         <div class="alert alert-info">
+            <h3>{{ Session::get('error') }}</h3>
+         </div>   
+         @elseif (Session::has('errors'))
+         <div class="alert alert-info">
+            <h3>{{ Session::get('errors') }}</h3>
+         </div>   
+
+        @else
+<div class="panel-body">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+</div>
+@endif

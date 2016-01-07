@@ -178,7 +178,6 @@ $factory->define(App\Kontak::class, function (Faker\Generator $faker) {
     return [
         'nim' => $faker->name,
         'slug' => $faker->slug,
-        'isi' => $faker->text($maxNbChars=1000),
-        'no' => $faker->numberBetween($min = 1, $max = 11)
+        'isi' => $faker->text($maxNbChars=1000)
     ];
 });

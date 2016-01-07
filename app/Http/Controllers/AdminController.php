@@ -12,9 +12,11 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\BeritaRequest;
 use App\Http\Requests\KontakRequest;
+use App\Http\Requests\UbahPasswordRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
+use App\Role;
 
 class AdminController extends Controller
 {
@@ -39,66 +41,67 @@ class AdminController extends Controller
 
 	public function buat_user()
 	{
-		return view('admin/tambah_user');
+		$roles = Role::latest()->get();
+		return view('admin/tambah_user', compact('roles'));
 	}
 
 
 	public function simpanuser(UserRequest $request)
 	{
+		
 		$input = $request->all();
 		$input['password'] = bcrypt($request->input('password'));
-		try
+
+		try 
 		{
 		User::create($input);
-		}
+		$user = User::latest()->firstOrFail();
+		$role = Role::whereName($request->input('role'))->firstOrFail();
+		$user->attachRole($role);
+		} 
 		catch (QueryException $e) {
-			return redirect()->route('admin::tambah_user')
-			->with('pesan', 'Username yang anda masukkan sudah ada dalam database.');
+		    return redirect()->back()->with('error', 'Username yang anda masukkan sudah ada dalam database.');
 		}
-
-		return redirect()->route('admin::user')
-		->with('message', 'User baru telah ditambahkan...');
+		
+		return redirect()->route('admin::user')->with('message', 'User baru telah ditambahkan...');
 	}
 
 	public function ubah_user($username)
 	{
 		$user = User::whereUsername($username)->firstOrFail();
-		return view('admin/ubah_user', compact('user'));
+		foreach ($user->roles as $roles) 
+		{
+			$role_user = $roles;
+		}
+		$roles = Role::where('name','!=', $role_user->name)->get();
+
+		return view('admin/ubah_user', compact('user','role_user','roles'));
 	}
 
-	public function update_user(UserRequest $request, $username)
+	public function update_user(Request $request, $username)
 	{
-		$user = Auth::user();
-
-        $password_lama = $request->input('password_lama');
-
-        if (!Hash::check($password_lama, $user->password))
-        {
-            return redirect()->back()->with('error', 'Password lama yang anda masukkan salah.');
-        }
-
-        if ($request->input('password') == '')
-        {
-            $input['password'] = $user->password;
-        }
-        else
-        {
-            $input['password'] = bcrypt($request->input('password'));
-        }
-
-       return redirect()->route('admin::user')->with('message', 'Profil user telah diupdate...');
-
-		/*if(bcrypt::check($newpassword, $oldpassword)){
-			$tes = User::findOrFail(5);
-			$tes->password = bcrypt::make(input::get('newpassword'));
-			$tes->save();
-		}
-		else{
-			var_dump('gagal');
+		$user = User::whereUsername($username)->firstOrFail();
+		foreach ($user->roles as $roles) 
+		{
+			$role = Role::whereName($roles->name)->firstOrFail();
+			$user->detachRole($role);
 		}
 
 		$input = $request->all();
-		return redirect()->route('admin::user');*/
+		$input['password'] = bcrypt($request->input('password'));
+
+		try 
+		{
+		$user->update($input);
+		$role = Role::whereName($request->input('role'))->firstOrFail();
+		$user->attachRole($role);
+		} 
+		catch (QueryException $e) {
+		    return redirect()->back()->with('error', 'Username yang anda masukkan sudah ada dalam database.');
+		}
+		
+		return redirect()->route('admin::user')->with('message', 'User telah diupdate...');
+	
 	}
 
 	public function setting()
@@ -106,9 +109,10 @@ class AdminController extends Controller
 		return view('admin/setting');
 	}
 
-	public function updatesetting(PasswordRequest $request)
-	{
-		$user = Auth::user();
+	public function updatesetting(UbahPasswordRequest $request)
+    {
+        $user = Auth::user();
+        $input = $request->all();
 
         $password_lama = $request->input('password_lama');
 
@@ -126,26 +130,11 @@ class AdminController extends Controller
             $input['password'] = bcrypt($request->input('password'));
         }
 
-       return redirect()->route('admin::setting')->with('message', 'Profil user telah diupdate...');
+        return redirect()->route('admin::setting')->with('message', 'Profil user telah diupdate...');
 
-		/*if(bcrypt::check($newpassword, $oldpassword)){
-			$tes = User::findOrFail(5);
-			$tes->password = bcrypt::make(input::get('newpassword'));
-			$tes->save();
-		}
-		else{
-			var_dump('gagal');
-		}
+    }
+		
 
-		$input = $request->all();
-		return redirect()->route('admin::user');*/
-	}	
-
-	public function tampilhapus_user($username)
-	{
-			$user = User::whereUsername($username)->firstOrFail();
-			return view('admin/tampildelete',compact('user'));
-	}
 	
 	public function hapus_user($username)
 	{

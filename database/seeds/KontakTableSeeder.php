@@ -11,6 +11,6 @@ class KontakTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Berita::class, 10)->create();
+        factory(App\Kontak::class, 10)->create();
     }
 }
