@@ -19,7 +19,7 @@
             </div>
 
             
-            <form role="form" action="http://localhost/praproposal/daftar" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{ route('home::simpan_tracerstudy')}}" method="POST" enctype="multipart/form-data">
                 
             <div class="panel-group" id="accordion">
             <div class="panel panel-default">

@@ -12,25 +12,25 @@
   <main id="main" class="site-main" role="main">
 	
     <article>
-    @foreach($berita as $dberita)
+    
     <header class="entry-headers col-md-12">
     <div class="entry-meta">    
     </div><!-- .entry-meta -->
                     
-    <h1 class="entry-titles">{{ $dberita->judul}}</h1>
-    <span class="posted-on">Posted on  {{ $dberita->created_at }} by {{ $dberita->penulis }}</span>
+    <h1 class="entry-titles">{{ $berita->judul}}</h1>
+    <span class="posted-on">Posted on  {{ $berita->created_at }} by {{ $berita->penulis }}</span>
     </header><!-- .entry-header -->
     
     <div class="col-sm-6 post-image">							
-    <a href="#"> <img class="img-responsive" src="{{ asset($dberita->gambar) }}"/></a>
+    <a href="#"> <img class="img-responsive" src="{{ asset($berita->gambar) }}"/></a>
     </div>
-
+    <div class="clearfix"></div> <br>
     <div class="entry-summary col-sm-6">
-    <p>{!! str_limit($dberita->isi, 20) !!}</p>
-    <a class="btn  btn-primary" href="{{ route('home::tampil_berita', $dberita->slug) }}"> Read More </a>
+    <p>{{$berita->isi}}</p>
     </div><!-- .entry-summary -->
-    @endforeach 
-    <div class="clearfix"></div>
+    <div class="clearfix"></div> <br>
+
+	<a  class="btn btn-primary" href="{{ route('home::beritaAlumni')}}">Back</a>
     </article><!-- #post-## -->
     
    

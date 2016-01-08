@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Encryption\DecryptException;
 use App\User;
+use App\Ts;
 use App\Kontak;
 use App\Berita;
 use App\Http\Requests;
@@ -161,25 +162,80 @@ class AdminController extends Controller
 	public function simpanberita(BeritaRequest $request)
 	{
 		$input = $request->all();
-		try
-		{
-		Berita::create($input);
-		}
-		catch (QueryException $e) {
-			return redirect()->route('tambah_berita')
-			->with('pesan', 'Username yang anda masukkan sudah ada dalam database.');
-		}
 
-		return redirect()->route('berita')
-		->with('message', 'Berita baru telah ditambahkan...');
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+
+        Berita::create($input);
+
+         return redirect()->route('admin::berita');
 	}
 
-	public function hapus_userberita($id)
-	{
-		$user = Berita::whereName($id)->firstOrFail();
-		$user->delete();
+	public function ubah_berita($id)
+    {
+        $berita = Berita::whereId($id)->firstOrFail();
+        return view('admin/ubah_berita', compact('berita'));
+    }
 
-		return redirect()->route('berita');
+	public function update_berita(Request $request, $id)
+    {
+        $berita = Berita::whereId($id)->firstOrFail();
+        
+        $input=$request->all();
+        
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+        
+        try
+        {
+            $berita->update($input);
+        }
+        catch (QueryException $e)
+        {
+            return redirect()->back()
+            ->with('gagal', 'Judul yang ada masukkan sudah ada');
+        }
+
+        return redirect('admin::berita')
+            ->with('sukses', 'Berita telah diupdate');
+    }
+
+	public function hapus_berita($id)
+	{
+		$pengguna = Berita::whereId($id)->firstOrFail();
+		$pengguna->delete();
+
+		return redirect()->route('admin::berita');
 	}
 
 	public function kontak()
@@ -187,5 +243,20 @@ class AdminController extends Controller
 		$no = 1;
 		$kontak = Kontak::orderBy('id', 'asc')->get();
 		return view('admin/kontak',compact('kontak','no'));
+	}
+
+	public function ts()
+	{
+		$no = 1;
+		$kontak = Ts::orderBy('id', 'asc')->get();
+		return view('admin/ts',compact('kontak','no'));
+	}
+
+	public function hapus_ts($id)
+	{
+		$pengguna = Ts::whereId($id)->firstOrFail();
+		$pengguna->delete();
+
+		return redirect()->route('admin::ts');
 	}
 }

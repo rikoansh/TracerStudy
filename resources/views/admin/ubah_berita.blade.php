@@ -29,33 +29,44 @@
                                 </ul>
                             </div>
                             @endif
-                    <form role="form" method="POST" action="{{ route('admin::simpan_berita')}}" accept-charset="UTF-8" enctype ="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                    <form role="form" method="POST" action="{{ route('admin::update_berita',$berita->id)}}" accept-charset="UTF-8" enctype ="multipart/form-data">
+                        <input name="_method" type="hidden" value="PATCH">
+                        {{ csrf_field() }}
                                         
                                         <div class="form-group">
                                             <label>Judul</label>
-                                            <input type="text" class="form-control" name="judul" value="{{ old('judul') }}"placeholder="Enter judul">
+                                           <input type="text" class="form-control" name="judul" value="{{ ($berita->judul) }}">
                                         </div>
+
                                         <div class="form-group">
                                             <label>Isi</label>
-                                            <input type="text" class="form-control" name="isi" value="{{ old('isi') }}"placeholder="Masukan isi">
+                                            <input type="text" class="form-control" name="isi" value="{{ ($berita->isi) }}">
                                         </div>
 
                                         <div class="form-group">
                                             <label>Penulis</label>
-                                            <input type="text" class="form-control" name="penulis" value="{{ old('penulis') }}"placeholder="Masukan penulis">
+                                            <input type="text" class="form-control" name="penulis" value="{{ ($berita->penulis) }}">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Penulis</label>
-                                            <input type="file"  name="gambar">
+                                            <label>Gambar</label>
+                                            <input type="text" class="form-control" name="penulis" value="{{ ($berita->penulis) }}">
                                         </div>
 
+                                         @if($berita->gambar)
+                                        <img src="{{ asset($berita->gambar) }}" style="width:300px; height:200px">
+                                        @else
+                                        <h4>Tidak ada Gambar!</h4>
+                                        @endif
+                                        <hr>
+                                        <input type="file" name="gambar">
+                                        <br>
                                         <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">
-                                            Tambah Berita
-                                        </button>
+                                            <div class="col-md-6 col-md-offset-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Edit Berita
+                                                </button>
+                                            </div>
                                         </div>
                                 </form>
                             </div>

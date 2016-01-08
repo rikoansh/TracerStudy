@@ -12,6 +12,7 @@
     <link href="{{ asset('admin/assets/css/main-style.css')}}" rel="stylesheet" />
     <!-- Page-Level CSS -->
     <link href="{{ asset('admin/assets/plugins/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('admin/assets/css/b.css')}}" rel="stylesheet" />
    </head>
 <body>
     <!--  wrapper -->
@@ -133,6 +134,7 @@
     <script src="{{ asset('admin/assets/plugins/morris/raphael-2.1.0.min.js')}}"></script>
     <script src="{{ asset('admin/assets/plugins/morris/morris.js')}}"></script>
     <script src="{{ asset('admin/assets/scripts/dashboard-demo.js')}}"></script>
+    <script src="{{ asset('admin/assets/scripts/b.js')}}"></script>
 
 </body>
 

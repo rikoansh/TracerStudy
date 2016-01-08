@@ -53,7 +53,7 @@
                                 <td>{{ $no++}}</td>
                                 <td>{{ $pengguna->username }}</td>
                                 <td style="text-align:center">
-                                    <form method="POST" action="{{ route('admin::hapus_user', $pengguna->username) }}" accept-charset="UTF-8" style="margin:0 auto" >
+                                    <form method="POST" action="{{ route('admin::hapus_user', $pengguna->id) }}" accept-charset="UTF-8" style="margin:0 auto" >
 
                                         <a href="{{ route('admin::ubah_user',$pengguna->username)}}" class="btn btn-primary">Edit</a> ||
                                         <input name="_method" type="hidden" value="delete">

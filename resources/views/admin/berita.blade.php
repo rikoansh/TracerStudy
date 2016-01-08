@@ -20,8 +20,8 @@
                     Actions
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Action</a>
+                 <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="{{ route('admin::tambah_berita')}}">Tambah Berita</a>
                     </li>
                     <li><a href="#">Another action</a>
                     </li>
@@ -45,6 +45,7 @@
                                 <th>No</th>
                                 <th>Judul</th>
                                 <th>Isi</th>
+                                <th>Gambar</th>
                                 <th>Slug</th>
                                 <th>Action</th>
                             </tr>
@@ -55,10 +56,11 @@
                                 <td>{{ $no++}}</td>
                                 <td>{{ $pengguna->judul }}</td>
                                 <td>{{ $pengguna->isi }}</td>
+                                <td><center><img src="{{ asset($pengguna->gambar) }}" alt="" style="width:200px; height=200px;"/></center></td>
                                 <td>{{ $pengguna->slug }}</td>
                                 <td style="text-align:center">
-                                    <form method="POST" action="#" accept-charset="UTF-8" style="margin:0 auto" >
-                                        <a href="#" class="btn btn-primary">Edit</a> ||
+                                    <form method="POST" action="{{ route('admin::hapus_berita', $pengguna->id) }}" accept-charset="UTF-8" style="margin:0 auto" >
+                                        <a href="{{ route('admin::ubah_berita',$pengguna->id)}}" class="btn btn-primary">Edit</a> ||
 
                                         <input name="_method" type="hidden" value="delete">
                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

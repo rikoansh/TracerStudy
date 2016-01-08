@@ -165,6 +165,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 */
 
+/*
 $factory->define(App\Berita::class, function (Faker\Generator $faker) {
     return [
         'judul' => ucfirst($faker->word),
@@ -173,7 +174,7 @@ $factory->define(App\Berita::class, function (Faker\Generator $faker) {
         'no' => $faker->numberBetween($min = 1, $max = 11)
     ];
 });
-
+*/
 $factory->define(App\Kontak::class, function (Faker\Generator $faker) {
     return [
         'nim' => $faker->name,

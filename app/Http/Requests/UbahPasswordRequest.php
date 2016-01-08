@@ -24,9 +24,13 @@ class UbahPasswordRequest extends Request
     public function rules()
     {
         return [
-           'password_lama'  => 'required|min:4',
-           'password'=>'confirmed|min:5',
+           'password_lama'=>'required',
+           'password'=>'confirmed', 
            ];
             
+    }
+    public function forbiddenResponse()
+    {
+        return response()->view('errors.503');
     }
 }

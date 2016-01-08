@@ -16,8 +16,10 @@ class TabelBerita extends Migration
             $table->increments('id');
             $table->string('judul');
             $table->text('isi');
+            $table->text('penulis');
             $table->string('slug');
-            $table->integer('no');
+            $table->text('gambar');
+            
             $table->timestamps();
         });
     }

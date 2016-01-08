@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         DB::table('kontak')->truncate();
 
         $this->call(UserTableSeeder::class);
-        $this->call(BeritaTableSeeder::class);
+        /*$this->call(BeritaTableSeeder::class);*/
         $this->call(KontakTableSeeder::class);
 
         $admin = App\User::find(1);

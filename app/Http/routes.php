@@ -19,6 +19,10 @@ Route::get('/', [
             'as' => '/', 'uses' => 'BeritaController@homeutama'
         ]);
 
+
+
+
+
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
         
         Route::get('home', [
@@ -28,16 +32,24 @@ Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function ()
         Route::get('home/tracerstudy', [
                 'as' => 'tracerstudy', 'uses' => 'BeritaController@tracerstudy'
             ]);
+        
+        Route::post('home/tracerstudy', [
+        'as' => 'simpan_tracerstudy', 'uses' => 'BeritaController@simpan_tracerstudy']);
 
         Route::get('home/berita', [
                 'as' => 'beritaAlumni', 'uses' => 'BeritaController@berita'
             ]);
 
+       Route::get('home/berita/{slug}', [
+                'as' => 'tampil_berita', 'uses' => 'BeritaController@tampil_berita'
+            ]);
 
         Route::get('home/komentar', [
                 'as' => 'komentarAlumni', 'uses' => 'BeritaController@komentar'
             ]);
-
+       
+        Route::post('home/tambahkomentar', [
+        'as' => 'simpan_komentar', 'uses' => 'BeritaController@komentar']);
 
         Route::get('home/laporan', [
                 'as' => 'laporanAlumni', 'uses' => 'BeritaController@laporan'
@@ -46,99 +58,22 @@ Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function ()
         Route::get('home/setting', [
                 'as' => 'settingAlumni', 'uses' => 'BeritaController@setting'
             ]);
-});
-
-
-Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function () {
-        Route::get('dashboardAkademik', [
-                'as' => 'homeAkademik', 'uses' => 'AkademikController@home'
-            ]);
-
-        Route::get('dashboardAkademik/usermaba', [
-                'as' => 'user', 'uses' => 'AkademikController@user'
-            ]);
-
-        Route::get('dashboardAkademik/berita', [
-                'as' => 'berita', 'uses' => 'AkademikController@berita'
-            ]);
-
-        Route::get('dashboardAkademik/laporan', [
-                'as' => 'laporan', 'uses' => 'AkademikController@laporan'
-            ]);
         
-        Route::get('dashboardAkademik/hasil', [
-                'as' => 'hasil', 'uses' => 'AkademikController@hasil'
+        Route::patch('home/updatesetting', [
+                'as' => 'updatepassword', 'uses' => 'BeritaController@updatepassword'
             ]);
+       
 });
 
 
-Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function () {
-        Route::get('dashboardfakultas', [
-                'as' => 'homefakultas', 'uses' => 'FakultasController@home'
-            ]);
 
-        Route::get('dashboardFakultas/usermaba', [
-                'as' => 'user', 'uses' => 'FakultasController@user'
-            ]);
 
-        Route::get('dashboardFakultas/berita', [
-                'as' => 'berita', 'uses' => 'FakultasController@berita'
-            ]);
 
-        Route::get('dashboardFakultas/useralumni', [
-                'as' => 'useralumni', 'uses' => 'FakultasController@useralumni'
-            ]);
-        
-        Route::get('dashboardFakultas/hasil', [
-                'as' => 'hasil', 'uses' => 'FakultasController@hasil'
-            ]);
-});
 
-Route::group(['as' => 'rektor::', 'middleware' => ['role:rektor']], function () {
-        Route::get('rektor/home', [
-                'as' => 'homeRektor', 'uses' => 'RektorController@home'
-            ]);
 
-        Route::get('rektor/tracerstudy', [
-                'as' => 'tracerstudy', 'uses' => 'RektorController@tracerstudy'
-            ]);
 
-        Route::get('rektor/laporan', [
-                'as' => 'laporan', 'uses' => 'RektorController@laporan'
-            ]);
 
-        Route::get('rektor/setting', [
-                'as' => 'setting', 'uses' => 'RektorController@settingRektor'
-            ]);
-});
 
-Route::group(['as' => 'dekan::', 'middleware' => ['role:dekan']], function () {
-         Route::get('dekan/home', [
-                'as' => 'homeRektor', 'uses' => 'DekanController@home'
-            ]);
-
-        Route::get('dekan/tracerstudy', [
-                'as' => 'tracerstudy', 'uses' => 'DekanController@tracerstudy'
-            ]);
-
-        Route::get('dekan/laporan', [
-                'as' => 'laporan', 'uses' => 'DekanController@laporan'
-            ]);
-
-        Route::get('dekan/setting', [
-                'as' => 'setting', 'uses' => 'DekanController@settingRektor'
-            ]);
-});
-
-Route::group(['as' => 'prodi::', 'middleware' => ['role:prodi']], function () {
-        Route::get('dashboardProdi', [
-                'as' => 'homeProdi', 'uses' => 'ProdiController@home'
-            ]);
-
-         Route::get('dashboardProdi/hasil', [
-                'as' => 'hasil', 'uses' => 'ProdiController@hasil'
-            ]);
-});
 
 Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
 
@@ -196,7 +131,169 @@ Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
         Route::get('admin/kontak', [
             'as' => 'kontak', 'uses' => 'AdminController@kontak'
         ]);
+
+        #TS
+        Route::get('admin/ts', [
+            'as' => 'ts', 'uses' => 'AdminController@ts'
+        ]);
+
+        Route::delete('admin/ts/{id}', [
+            'as' => 'hapus_ts', 'uses' => 'AdminController@hapus_ts']);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function () {
+        Route::get('dashboardAkademik', [
+                'as' => 'homeAkademik', 'uses' => 'AkademikController@home'
+            ]);
+
+        Route::get('dashboardAkademik/usermaba', [
+                'as' => 'user', 'uses' => 'AkademikController@user'
+            ]);
+
+        Route::get('dashboardAkademik/berita', [
+                'as' => 'berita', 'uses' => 'AkademikController@berita'
+            ]);
+
+        Route::get('dashboardAkademik/laporan', [
+                'as' => 'laporan', 'uses' => 'AkademikController@laporan'
+            ]);
+        
+        Route::get('dashboardAkademik/hasil', [
+                'as' => 'hasil', 'uses' => 'AkademikController@hasil'
+            ]);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function () {
+        Route::get('dashboardfakultas', [
+                'as' => 'homefakultas', 'uses' => 'FakultasController@home'
+            ]);
+
+        Route::get('dashboardFakultas/usermaba', [
+                'as' => 'user', 'uses' => 'FakultasController@user'
+            ]);
+
+        Route::get('dashboardFakultas/berita', [
+                'as' => 'berita', 'uses' => 'FakultasController@berita'
+            ]);
+
+        Route::get('dashboardFakultas/useralumni', [
+                'as' => 'useralumni', 'uses' => 'FakultasController@useralumni'
+            ]);
+        
+        Route::get('dashboardFakultas/hasil', [
+                'as' => 'hasil', 'uses' => 'FakultasController@hasil'
+            ]);
+});
+
+
+
+
+
+
+
+Route::group(['as' => 'rektor::', 'middleware' => ['role:rektor']], function () {
+        Route::get('rektor/home', [
+                'as' => 'homeRektor', 'uses' => 'RektorController@home'
+            ]);
+
+        Route::get('rektor/tracerstudy', [
+                'as' => 'tracerstudy', 'uses' => 'RektorController@tracerstudy'
+            ]);
+
+        Route::get('rektor/laporan', [
+                'as' => 'laporan', 'uses' => 'RektorController@laporan'
+            ]);
+
+        Route::get('rektor/setting', [
+                'as' => 'setting', 'uses' => 'RektorController@settingRektor'
+            ]);
+});
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['as' => 'dekan::', 'middleware' => ['role:dekan']], function () {
+         Route::get('dekan/home', [
+                'as' => 'homeRektor', 'uses' => 'DekanController@home'
+            ]);
+
+        Route::get('dekan/tracerstudy', [
+                'as' => 'tracerstudy', 'uses' => 'DekanController@tracerstudy'
+            ]);
+
+        Route::get('dekan/laporan', [
+                'as' => 'laporan', 'uses' => 'DekanController@laporan'
+            ]);
+
+        Route::get('dekan/setting', [
+                'as' => 'setting', 'uses' => 'DekanController@settingRektor'
+            ]);
+});
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['as' => 'prodi::', 'middleware' => ['role:prodi']], function () {
+        Route::get('dashboardProdi', [
+                'as' => 'homeProdi', 'uses' => 'ProdiController@home'
+            ]);
+
+         Route::get('dashboardProdi/hasil', [
+                'as' => 'hasil', 'uses' => 'ProdiController@hasil'
+            ]);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('login', [
