@@ -96,16 +96,24 @@
                     </li>
 
                     @if (Request::is('dashboardFakultas/usermaba')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('fakultas::user') }}"><i class="fa fa-user fa-fw"></i>User Mahasiswa</a>
+                        <a href="{{ route('fakultas::user') }}"><i class="fa fa-user fa-fw"></i>User Maba</a>
                     </li>
 
                     </li>
-                    @if (Request::is('dashboardFakultas/useralumni')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('fakultas::useralumni') }}"><i class="fa fa-flask fa-fw"></i>User Alumni</a>
+                    @if (Request::is('dashboardFakultas/transferi')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::transfer') }}"><i class="fa fa-flask fa-fw"></i>Transfer Maba/Alumni</a>
                     </li>
 
                     @if (Request::is('dashboardFakultas/berita')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('fakultas::berita') }}"><i class="fa fa-flask fa-fw"></i>Berita</a>
+                    </li>
+
+                    @if (Request::is('dashboardFakultas/kartu')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::kartu') }}"><i class="fa fa-flask fa-fw"></i>Kartu Alumni</a>
+                    </li>
+
+                     @if (Request::is('dashboardFakultas/saran')) <li class="selected"> @else <li> @endif
+                        <a href="{{ route('fakultas::saran') }}"><i class="fa fa-flask fa-fw"></i>Saran</a>
                     </li>
 
                     @if (Request::is('dashboardFakultas/hasil')) <li class="selected"> @else <li> @endif

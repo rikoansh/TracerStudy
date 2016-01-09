@@ -58,7 +58,7 @@ Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function ()
         Route::get('home/setting', [
                 'as' => 'settingAlumni', 'uses' => 'BeritaController@setting'
             ]);
-        
+
         Route::patch('home/updatesetting', [
                 'as' => 'updatepassword', 'uses' => 'BeritaController@updatepassword'
             ]);
@@ -84,9 +84,9 @@ Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
         Route::get('admin/setting', [
             'as' => 'setting', 'uses' => 'AdminController@setting']);
 
-        Route::post('admin/setting', [
+        Route::patch('admin/setting', [
             'as' => 'updatesetting', 'uses' => 'AdminController@updatesetting']);
-
+         
         #user
         Route::get('admin/user', [
             'as' => 'user', 'uses' => 'AdminController@user']);
@@ -158,14 +158,45 @@ Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function
                 'as' => 'homeAkademik', 'uses' => 'AkademikController@home'
             ]);
 
+        #user
         Route::get('dashboardAkademik/usermaba', [
                 'as' => 'user', 'uses' => 'AkademikController@user'
             ]);
+        Route::get('dashboardAkademik/user/buat', [
+            'as' => 'tambah_user', 'uses' => 'AkademikController@buat_user']);
 
+        Route::post('dashboardAkademik/user/daftar', [
+            'as' => 'simpan_user', 'uses' => 'AkademikController@simpanuser']);
+
+        Route::get('dashboardAkademik/user/edit/{nim}', [
+            'as' => 'ubah_user', 'uses' => 'AkademikController@ubah_user']);
+
+        Route::patch('dashboardAkademik/user/edit/{nim}', [
+            'as' => 'update_user', 'uses' => 'AkademikController@update_user']);
+
+        Route::delete('dashboardAkademik/user/{nim}', [
+            'as' => 'hapus_user', 'uses' => 'AkademikController@hapus_user']);
+
+        #berita
         Route::get('dashboardAkademik/berita', [
                 'as' => 'berita', 'uses' => 'AkademikController@berita'
             ]);
+        Route::get('dashboardAkademik/berita/buat', [
+            'as' => 'tambah_berita', 'uses' => 'AkademikController@buat_berita']);
 
+        Route::post('dashboardAkademik/berita/daftar', [
+            'as' => 'simpan_berita', 'uses' => 'AkademikController@simpanberita']);
+
+        Route::get('dashboardAkademik/berita/edit/{id}', [
+            'as' => 'ubah_berita', 'uses' => 'AkademikController@ubah_berita']);
+
+        Route::patch('dashboardAkademik/berita/edit/{id}', [
+            'as' => 'update_berita', 'uses' => 'AkademikController@update_berita']);
+
+        Route::delete('dashboardAkademik/berita/{id}', [
+            'as' => 'hapus_berita', 'uses' => 'AkademikController@hapus_berita']);
+
+        #laporan
         Route::get('dashboardAkademik/laporan', [
                 'as' => 'laporan', 'uses' => 'AkademikController@laporan'
             ]);
@@ -193,19 +224,60 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
         Route::get('dashboardfakultas', [
                 'as' => 'homefakultas', 'uses' => 'FakultasController@home'
             ]);
-
+        
+        #usermaba
         Route::get('dashboardFakultas/usermaba', [
                 'as' => 'user', 'uses' => 'FakultasController@user'
             ]);
+        Route::get('dashboardFakultas/user/buat', [
+            'as' => 'tambah_user', 'uses' => 'FakultasController@buat_user']);
 
-        Route::get('dashboardFakultas/berita', [
+        Route::post('dashboardFakultas/user/daftar', [
+            'as' => 'simpan_user', 'uses' => 'FakultasController@simpanuser']);
+
+        Route::get('dashboardFakultas/user/edit/{nim}', [
+            'as' => 'ubah_user', 'uses' => 'FakultasController@ubah_user']);
+
+        Route::patch('dashboardFakultas/user/edit/{nim}', [
+            'as' => 'update_user', 'uses' => 'FakultasController@update_user']);
+
+        Route::delete('dashboardFakultas/user/{nim}', [
+            'as' => 'hapus_user', 'uses' => 'FakultasController@hapus_user']);
+       
+        #kartu alumni
+        Route::get('dashboardFakultas/kartu', [
+                'as' => 'kartu', 'uses' => 'FakultasController@kartu'
+            ]);
+
+        #berita
+         Route::get('dashboardFakultas/berita', [
                 'as' => 'berita', 'uses' => 'FakultasController@berita'
             ]);
+        Route::get('dashboardFakultas/berita/buat', [
+            'as' => 'tambah_berita', 'uses' => 'FakultasController@buat_berita']);
 
-        Route::get('dashboardFakultas/useralumni', [
-                'as' => 'useralumni', 'uses' => 'FakultasController@useralumni'
+        Route::post('dashboardFakultas/berita/daftar', [
+            'as' => 'simpan_berita', 'uses' => 'FakultasController@simpanberita']);
+
+        Route::get('dashboardFakultas/berita/edit/{id}', [
+            'as' => 'ubah_berita', 'uses' => 'FakultasController@ubah_berita']);
+
+        Route::patch('dashboardFakultas/berita/edit/{id}', [
+            'as' => 'update_berita', 'uses' => 'FakultasController@update_berita']);
+
+        Route::delete('dashboardFakultas/berita/{id}', [
+            'as' => 'hapus_berita', 'uses' => 'FakultasController@hapus_berita']);
+
+        #transfer
+        Route::get('dashboardFakultas/transferi', [
+                'as' => 'transfer', 'uses' => 'FakultasController@transfer'
             ]);
-        
+
+        #saran
+        Route::get('dashboardFakultas/saran', [
+                'as' => 'saran', 'uses' => 'FakultasController@saran'
+            ]);
+        #hasil
         Route::get('dashboardFakultas/hasil', [
                 'as' => 'hasil', 'uses' => 'FakultasController@hasil'
             ]);

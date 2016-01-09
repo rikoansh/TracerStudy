@@ -96,7 +96,7 @@
                     </li>
 
                     @if (Request::is('dashboardAkademik/usermaba')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('akademik::user') }}"><i class="fa fa-user fa-fw"></i>User Mahasiswa</a>
+                        <a href="{{ route('akademik::user') }}"><i class="fa fa-user fa-fw"></i>User Maba</a>
                     </li>
 
                     @if (Request::is('dashboardAkademik/berita')) <li class="selected"> @else <li> @endif

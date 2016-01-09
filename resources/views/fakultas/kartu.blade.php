@@ -1,6 +1,6 @@
 @extends('_layout/baseFakultas')
 
-@section('title','useralumni')
+@section('title','kartu')
 
 
 @section('isi')

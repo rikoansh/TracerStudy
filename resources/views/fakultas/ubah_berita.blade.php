@@ -1,6 +1,6 @@
-@extends('_layout/admin')
+@extends('_layout/baseFakultas')
 
-@section('title','home')
+@section('title','ubah_berita')
 
 
 @section('isi')
@@ -29,7 +29,7 @@
                                 </ul>
                             </div>
                             @endif
-                    <form role="form" method="POST" action="{{ route('admin::update_berita',$berita->id)}}" accept-charset="UTF-8" enctype ="multipart/form-data">
+                    <form role="form" method="POST" action="{{ route('fakultas::update_berita',$berita->id)}}" accept-charset="UTF-8" enctype ="multipart/form-data">
                         <input name="_method" type="hidden" value="PATCH">
                         {{ csrf_field() }}
                                         

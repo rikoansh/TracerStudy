@@ -3,10 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Contracts\Encryption\DecryptException;
+use App\User;
+use App\Ts;
+use App\Maba;
+use App\Kontak;
+use App\Berita;
 use App\Http\Requests;
+use App\Http\Requests\UserRequest;
+use App\Http\Requests\PasswordRequest;
+use App\Http\Requests\BeritaRequest;
+use App\Http\Requests\KontakRequest;
+use App\Http\Requests\UbahPasswordRequest;
 use App\Http\Controllers\Controller;
-
+use Auth;
+use Hash;
+use App\Role;
 class FakultasController extends Controller
 {
      public function home()
@@ -15,27 +27,177 @@ class FakultasController extends Controller
 		return view('fakultas/home',compact('no'));
 	}
 
-	public function user()
+public function user()
 	{
 		$no = 1;
-		return view('fakultas/user',compact('no'));
+		$user = Maba::where('fakultas', '=', 'Teknik')->get();
+		return view('fakultas/user',compact('no','user'));
 	}
 
+	public function buat_user()
+	{
+		$roles = Role::whereIn('id', [2])->get();
+		return view('fakultas/tambah_user', compact('roles'));
+	}
+
+	public function simpanuser(Request $request)
+	{
+		
+		$input = $request->all();
+
+        Maba::create($input);
+
+        return redirect()->route('fakultas::user')->with('message', 'User Sudah di Masukkan');
+	}
+
+	public function ubah_user($nim)
+	{
+		$user = Maba::whereNim($nim)->firstOrFail();
+
+		return view('fakultas/ubah_user', compact('user'));
+	}
+
+	public function update_user(Request $request, $nim)
+	{
+		$user = Maba::whereNim($nim)->firstOrFail();
+		$input = $request->all();
+		
+		try 
+		{
+		$user->update($input);
+		} 
+		catch (QueryException $e) {
+		    return redirect()->back()
+		    ->with('gagal', 'Gagal Mengupdate');
+		}
+		return redirect()->route('fakultas::user')
+		->with('pesan', 'User telah berhasil di update.');
+	}
+
+	public function hapus_user($nim)
+	{
+		$user = Maba::whereNim($nim)->firstOrFail();
+		$user->delete();
+
+		return redirect()->route('fakultas::user');
+	}
+###########################################################################################################################################
 	public function berita()
 	{
 		$no = 1;
-		return view('fakultas/berita',compact('no'));
+		$berita = Berita::orderBy('created_at', 'asc')->get();
+		return view('fakultas/berita',compact('berita','no'));
 	}
 
-	public function useralumni()
+
+	public function buat_berita()
 	{
-		$no = 1;
-		return view('fakultas/useralumni',compact('no'));
+		return view('fakultas/tambah_berita');
 	}
 
+	public function simpanberita(BeritaRequest $request)
+	{
+		$input = $request->all();
+
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+
+        Berita::create($input);
+
+         return redirect()->route('fakultas::berita');
+	}
+
+	public function ubah_berita($id)
+    {
+        $berita = Berita::whereId($id)->firstOrFail();
+        return view('fakultas/ubah_berita', compact('berita'));
+    }
+
+	public function update_berita(Request $request, $id)
+    {
+        $berita = Berita::whereId($id)->firstOrFail();
+        
+        $input=$request->all();
+        
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+        
+        try
+        {
+            $berita->update($input);
+        }
+        catch (QueryException $e)
+        {
+            return redirect()->back()
+            ->with('gagal', 'Judul yang ada masukkan sudah ada');
+        }
+
+        return redirect('fakultas::berita')
+            ->with('sukses', 'Berita telah diupdate');
+    }
+
+	public function hapus_berita($id)
+	{
+		$pengguna = Berita::whereId($id)->firstOrFail();
+		$pengguna->delete();
+
+		return redirect()->route('fakultas::berita');
+	}
+
+###################################################################################################################################
 	public function hasil()
 	{
 		$no = 1;
 		return view('fakultas/hasil',compact('no'));
 	}
+#####################################################################################################################
+	public function kartu()
+	{
+		$no = 1;
+		return view('fakultas/kartu',compact('no'));
+	}
+
+############################################################################################################################################
+	public function transfer()
+	{
+		$no = 1;
+		return view('fakultas/transfer',compact('no'));
+	}
+########################################################################################################################################
+	public function saran()
+	{
+		$no = 1;
+		return view('fakultas/saran',compact('no'));
+	}
+
 }

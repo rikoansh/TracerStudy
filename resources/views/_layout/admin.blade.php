@@ -102,10 +102,7 @@
                     @if (Request::is('admin/user')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::user') }}"><i class="fa fa-user fa-fw"></i>User</a>
                     </li>
-
-                    @if (Request::is('admin/berita')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('admin::berita') }}"><i class="fa fa-flask fa-fw"></i>Berita</a>
-                    </li>
+                    
                     @if (Request::is('admin/kontak')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('admin::kontak') }}"><i class="fa fa-flask fa-fw"></i>Kontak</a>
                     </li>

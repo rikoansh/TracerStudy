@@ -42,7 +42,7 @@ class AdminController extends Controller
 
 	public function buat_user()
 	{
-		$roles = Role::latest()->get();
+		$roles = Role::whereIn('id', [1,3,4,5,6,7])->get();
 		return view('admin/tambah_user', compact('roles'));
 	}
 
@@ -105,6 +105,14 @@ class AdminController extends Controller
 	
 	}
 
+	public function hapus_user($username)
+	{
+		$user = User::whereUsername($username)->firstOrFail();
+		$user->delete();
+
+		return redirect()->route('admin::user');
+	}
+
 	public function setting()
 	{
 		return view('admin/setting');
@@ -119,7 +127,7 @@ class AdminController extends Controller
 
         if (!Hash::check($password_lama, $user->password))
         {
-            return redirect()->back()->with('error', 'Password lama yang anda masukkan salah.');
+            return redirect()->route('admin::setting')->with('error', 'Password lama yang anda masukkan salah.');
         }
 
         if ($request->input('password') == '')
@@ -131,112 +139,25 @@ class AdminController extends Controller
             $input['password'] = bcrypt($request->input('password'));
         }
 
-        return redirect()->route('admin::setting')->with('message', 'Profil user telah diupdate...');
+        try 
+        {
+        $user->update($input);
+      
+        } 
+        catch (QueryException $e) {
+            return redirect()->route('admin::setting')->with('pesan', 'Username yang anda masukkan sudah ada dalam database.');
+        }
 
+        return redirect()->route('admin::setting')->with('pesan', 'Password telah berhasil di ubah');
+        
     }
 		
 
 	
-	public function hapus_user($username)
-	{
-		$user = User::whereUsername($username)->firstOrFail();
-		$user->delete();
-
-		return redirect()->route('admin::user');
-	}
+	
 
 ######################################################################################################################################################
-	public function berita()
-	{
-		$no = 1;
-		$berita = Berita::orderBy('created_at', 'asc')->get();
-		return view('admin/berita',compact('berita','no'));
-	}
-
-
-	public function buat_berita()
-	{
-		return view('admin/tambah_berita');
-	}
-
-	public function simpanberita(BeritaRequest $request)
-	{
-		$input = $request->all();
-
-        $input['slug'] = str_slug($request->input('judul'));
-
-        if($request->hasFile('gambar'))
-        {
-        $nama_file = $input['gambar']->getClientOriginalName();
-        $save_path = 'images/';
-
-        #save ke komputer
-        $input['gambar']->move($save_path,$nama_file);
-        
-        #masuk ke database
-        $input['gambar'] = $save_path.$nama_file;
-        }
-        else
-        {
-            $input['gambar']= '';
-        }
-
-        Berita::create($input);
-
-         return redirect()->route('admin::berita');
-	}
-
-	public function ubah_berita($id)
-    {
-        $berita = Berita::whereId($id)->firstOrFail();
-        return view('admin/ubah_berita', compact('berita'));
-    }
-
-	public function update_berita(Request $request, $id)
-    {
-        $berita = Berita::whereId($id)->firstOrFail();
-        
-        $input=$request->all();
-        
-        $input['slug'] = str_slug($request->input('judul'));
-
-        if($request->hasFile('gambar'))
-        {
-        $nama_file = $input['gambar']->getClientOriginalName();
-        $save_path = 'images/';
-
-        #save ke komputer
-        $input['gambar']->move($save_path,$nama_file);
-        
-        #masuk ke database
-        $input['gambar'] = $save_path.$nama_file;
-        }
-        else
-        {
-            $input['gambar']= '';
-        }
-        
-        try
-        {
-            $berita->update($input);
-        }
-        catch (QueryException $e)
-        {
-            return redirect()->back()
-            ->with('gagal', 'Judul yang ada masukkan sudah ada');
-        }
-
-        return redirect('admin::berita')
-            ->with('sukses', 'Berita telah diupdate');
-    }
-
-	public function hapus_berita($id)
-	{
-		$pengguna = Berita::whereId($id)->firstOrFail();
-		$pengguna->delete();
-
-		return redirect()->route('admin::berita');
-	}
+	
 
 	public function kontak()
 	{

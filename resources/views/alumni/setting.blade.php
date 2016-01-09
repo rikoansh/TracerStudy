@@ -54,7 +54,7 @@
             <input type="password" class="form-control" name="password_confirmation">
         </div>
                                   
-        <button type="submit" class="btn btn-info">Oke </button>
+        <button type="submit" class="btn btn-info">Ubah Password </button>
 		</form>
 
 </div>
