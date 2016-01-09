@@ -165,5 +165,41 @@ $(document).ready(function() {
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#singlemenu5').hide();
+  $('#hideform5').hide();
+  $('input:radio[name="has_child5"]').change(
+      function(){
+          if ($(this).is(':checked') && $(this).attr('id') == 'has_submenu5') {
+            $('#singlemenu5').show(300);
+            $('#hideform5').hide(300);
+          }
+          else if ($(this).is(':checked') && $(this).attr('id') == 'no_submenu5') {
+            $('#singlemenu5').hide(300);
+            $('#hideform5').show(300);
+          }
+      });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#singlemenu6').hide();
+  $('#hideform6').hide();
+  $('input:radio[name="has_child6"]').change(
+      function(){
+          if ($(this).is(':checked') && $(this).attr('id') == 'has_submenu6') {
+            $('#singlemenu6').show(300);
+            $('#hideform6').hide(300);
+          }
+          else if ($(this).is(':checked') && $(this).attr('id') == 'no_submenu6') {
+            $('#singlemenu6').hide(300);
+            $('#hideform6').show(300);
+          }
+      });
+});
+</script>
+
   </body>
 </html>

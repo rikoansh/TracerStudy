@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Isi</label>
-                                            <input type="text" class="form-control" name="isi" value="{{ old('isi') }}"placeholder="Masukan isi">
+                                            <textarea name="isi" value="{{ old('isi') }}">Masukan isi berita</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -48,7 +48,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Penulis</label>
+                                            <label>Gambar</label>
                                             <input type="file"  name="gambar">
                                         </div>
 
