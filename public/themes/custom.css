@@ -83,3 +83,8 @@ article {
 btn-lebar {
 	width: 200px;
 }
+
+.rata {
+	text-align: justify;
+	margin-bottom: 20px;
+}

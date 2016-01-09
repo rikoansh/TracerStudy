@@ -19,7 +19,7 @@
         <form role="form">
         <div class="form-group">
         <label>Masukan koemntar anda dibawah ini:</label>
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea name="isi" value="{{ old('isi') }}">Masukan saran anda...</textarea>
         </div>
                                   
         <button type="submit" class="btn btn-info">Send Message </button>
