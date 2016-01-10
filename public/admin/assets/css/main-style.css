@@ -99,7 +99,7 @@ padding: 20px 15px;
     padding-left:20px;
 }
 .navbar-brand img {
-    height:30px;
+    height:60px;
 }
 .top-label {
     position: absolute;
@@ -143,5 +143,11 @@ border-color: #27A6BE;
 #wrapper {
     margin-top:140px!important;
     
+}
+}
+
+@media(max-width:768px) {
+.navbar-brand img {
+    height:35px;
 }
 }

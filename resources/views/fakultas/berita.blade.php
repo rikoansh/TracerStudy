@@ -6,7 +6,7 @@
 
  <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">User</h1>
+        <h1 class="page-header">Menu Berita</h1>
     </div>
 </div>
 
@@ -22,12 +22,12 @@
                  <ul class="dropdown-menu pull-right" role="menu">
                     <li><a href="{{ route('fakultas::tambah_berita')}}">Tambah Berita</a>
                     </li>
-                    <li><a href="#">Another action</a>
+                    <li><a href="#">Action 2</a>
                     </li>
-                    <li><a href="#">Something else here</a>
+                    <li><a href="#">Action 3</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="#">Separated link</a>
+                    <li><a href="#">Action 4</a>
                     </li>
                 </ul>
             </div>

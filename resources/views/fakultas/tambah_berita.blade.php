@@ -8,7 +8,7 @@
 <div class="row">
      <!-- page header -->
     <div class="col-lg-12">
-        <h1 class="page-header">Tambah User</h1>
+        <h1 class="page-header">Tambah Berita</h1>
     </div>
     <!--end page header -->
 </div>

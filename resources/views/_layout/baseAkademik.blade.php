@@ -12,6 +12,9 @@
     <link href="{{ asset('admin/assets/css/main-style.css')}}" rel="stylesheet" />
     <!-- Page-Level CSS -->
     <link href="{{ asset('admin/assets/plugins/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
+   
+    <script src="{{ asset('admin/assets/js/tinymce/tinymce.min.js')}}"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
    </head>
 <body>
     <!--  wrapper -->

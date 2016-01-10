@@ -40,7 +40,7 @@
 
                                         <div class="form-group">
                                             <label>Isi</label>
-                                            <input type="text" class="form-control" name="isi" value="{{ ($berita->isi) }}">
+                                            <textarea name="isi" value="{{ old('isi') }}">Masukan isi berita</textarea>
                                         </div>
 
                                         <div class="form-group">
