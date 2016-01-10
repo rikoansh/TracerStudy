@@ -9,10 +9,12 @@ use App\Ts;
 use App\Maba;
 use App\Kontak;
 use App\Berita;
+use App\Laporan;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\BeritaRequest;
+use App\Http\Requests\LaporanRequest;
 use App\Http\Requests\KontakRequest;
 use App\Http\Requests\UbahPasswordRequest;
 use App\Http\Controllers\Controller;
@@ -175,10 +177,97 @@ class AkademikController extends Controller
 		return redirect()->route('akademik::berita');
 	}
 #########################################################################################################################################
+	
 	public function laporan()
 	{
 		$no = 1;
-		return view('akademik/laporan',compact('no'));
+		$laporan = Laporan::orderBy('created_at', 'asc')->get();
+		return view('akademik/laporan',compact('no','laporan'));
+	}
+
+
+	public function buat_laporan()
+	{
+		return view('akademik/tambah_laporan');
+	}
+
+	public function simpanlaporan(LaporanRequest $request)
+	{
+		$input = $request->all();
+
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+
+        Laporan::create($input);
+
+         return redirect()->route('akademik::laporan');
+	}
+
+	public function ubah_laporan($id)
+    {
+        $laporan = Laporan::whereId($id)->firstOrFail();
+        return view('akademik/ubah_laporan', compact('laporan'));
+    }
+
+	public function update_laporan(Request $request, $id)
+    {
+        $laporan = Laporan::whereId($id)->firstOrFail();
+        
+        $input=$request->all();
+        
+        $input['slug'] = str_slug($request->input('judul'));
+
+        if($request->hasFile('gambar'))
+        {
+        $nama_file = $input['gambar']->getClientOriginalName();
+        $save_path = 'images/';
+
+        #save ke komputer
+        $input['gambar']->move($save_path,$nama_file);
+        
+        #masuk ke database
+        $input['gambar'] = $save_path.$nama_file;
+        }
+        else
+        {
+            $input['gambar']= '';
+        }
+        
+        try
+        {
+            $laporan->update($input);
+        }
+        catch (QueryException $e)
+        {
+            return redirect()->back()
+            ->with('gagal', 'Judul yang ada masukkan sudah ada');
+        }
+
+        	return redirect()->route('akademik::laporan')
+            ->with('sukses', 'Laporan telah diupdate');
+    }
+
+	public function hapus_laporan($id)
+	{
+		$pengguna = Laporan::whereId($id)->firstOrFail();
+		$pengguna->delete();
+
+		return redirect()->route('akademik::laporan');
 	}
 
 

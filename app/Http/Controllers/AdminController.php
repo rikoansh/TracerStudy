@@ -159,13 +159,6 @@ class AdminController extends Controller
 ######################################################################################################################################################
 	
 
-	public function kontak()
-	{
-		$no = 1;
-		$kontak = Kontak::orderBy('id', 'asc')->get();
-		return view('admin/kontak',compact('kontak','no'));
-	}
-
 	public function ts()
 	{
 		$no = 1;

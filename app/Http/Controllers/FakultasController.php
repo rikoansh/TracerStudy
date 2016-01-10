@@ -194,10 +194,12 @@ public function user()
 		return view('fakultas/transfer',compact('no'));
 	}
 ########################################################################################################################################
+
 	public function saran()
 	{
 		$no = 1;
-		return view('fakultas/saran',compact('no'));
+		$kontak = Kontak::orderBy('id', 'asc')->get();
+		return view('fakultas/saran',compact('kontak','no'));
 	}
 
 }

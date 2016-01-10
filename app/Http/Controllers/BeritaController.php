@@ -27,19 +27,19 @@ class BeritaController extends Controller
 		return view('alumni/home',compact('no'));
 	}
 
-	public function komentar()
+	public function saran()
 	{
 		$no = 1;
-		return view('alumni/komentar',compact('no'));
+		return view('alumni/saran',compact('no'));
 	}
 	
-	public function simpan_komentar(KontakRequest $request)
+	public function simpan_saran(KontakRequest $request)
 	{
 		$input = $request->all();
 
         Kontak::create($input);
 
-        return redirect()->route('home::komentarAlumni')->with('message', 'Komentar Sudah di Masukkan');
+        return redirect()->route('home::saranAlumni')->with('message', 'Saran Sudah di Masukkan');
 	}
 
 	public function berita()

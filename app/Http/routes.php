@@ -44,12 +44,12 @@ Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function ()
                 'as' => 'tampil_berita', 'uses' => 'BeritaController@tampil_berita'
             ]);
 
-        Route::get('home/komentar', [
-                'as' => 'komentarAlumni', 'uses' => 'BeritaController@komentar'
+        Route::get('home/saran', [
+                'as' => 'saranAlumni', 'uses' => 'BeritaController@saran'
             ]);
        
-        Route::post('home/tambahkomentar', [
-        'as' => 'simpan_komentar', 'uses' => 'BeritaController@komentar']);
+        Route::post('home/tambahsaran', [
+        'as' => 'simpan_saran', 'uses' => 'BeritaController@simpan_saran']);
 
         Route::get('home/laporan', [
                 'as' => 'laporanAlumni', 'uses' => 'BeritaController@laporan'
@@ -127,10 +127,7 @@ Route::group(['as' => 'admin::', 'middleware' => ['role:admin']], function () {
         Route::delete('admin/berita/{id}', [
             'as' => 'hapus_berita', 'uses' => 'AdminController@hapus_berita']);
 
-        #kontak
-        Route::get('admin/kontak', [
-            'as' => 'kontak', 'uses' => 'AdminController@kontak'
-        ]);
+       
 
         #TS
         Route::get('admin/ts', [
@@ -200,7 +197,23 @@ Route::group(['as' => 'akademik::', 'middleware' => ['role:akademik']], function
         Route::get('dashboardAkademik/laporan', [
                 'as' => 'laporan', 'uses' => 'AkademikController@laporan'
             ]);
-        
+        Route::get('dashboardAkademik/laporan/buat', [
+            'as' => 'tambah_laporan', 'uses' => 'AkademikController@buat_laporan']);
+
+        Route::post('dashboardAkademik/laporan/daftar', [
+            'as' => 'simpan_laporan', 'uses' => 'AkademikController@simpanlaporan']);
+
+        Route::get('dashboardAkademik/laporan/edit/{id}', [
+            'as' => 'ubah_laporan', 'uses' => 'AkademikController@ubah_laporan']);
+
+        Route::patch('dashboardAkademik/laporan/edit/{id}', [
+            'as' => 'update_laporan', 'uses' => 'AkademikController@update_laporan']);
+
+        Route::delete('dashboardAkademik/laporan/{id}', [
+            'as' => 'hapus_laporan', 'uses' => 'AkademikController@hapus_laporan']);
+
+
+        #hasil
         Route::get('dashboardAkademik/hasil', [
                 'as' => 'hasil', 'uses' => 'AkademikController@hasil'
             ]);

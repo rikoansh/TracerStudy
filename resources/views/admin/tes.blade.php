@@ -23,12 +23,12 @@
                 <ul class="dropdown-menu pull-right" role="menu">
                     <li><a href="#">Action</a>
                     </li>
-                    <li><a href="#">Action 2</a>
+                    <li><a href="#">Another action</a>
                     </li>
-                    <li><a href="#">Action 3</a>
+                    <li><a href="#">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="#">Action 4</a>
+                    <li><a href="#">Separated link</a>
                     </li>
                 </ul>
             </div>

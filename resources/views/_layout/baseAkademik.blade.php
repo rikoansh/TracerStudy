@@ -94,7 +94,7 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    @if (Request::is('dashboardAkademik')) <li class="selected"> @else <li> @endif
+                   @if (Request::is('dashboardAkademik')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('akademik::homeAkademik') }}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
 
@@ -110,7 +110,7 @@
                     @if (Request::is('dashboardAkademik/laporan')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('akademik::laporan') }}"><i class="fa fa-flask fa-fw"></i>Laporan</a>
                     </li>
-
+                    
                     
                     @if (Request::is('dashboardAkademik/hasil')) <li class="selected"> @else <li> @endif
                         <a href="{{ route('akademik::hasil') }}"><i class="fa fa-flask fa-fw"></i>Hasil TS</a>

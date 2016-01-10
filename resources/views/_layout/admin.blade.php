@@ -84,9 +84,6 @@
                         <a href="{{ route('admin::user') }}"><i class="fa fa-user fa-fw"></i>User</a>
                     </li>
                     
-                    @if (Request::is('admin/kontak')) <li class="selected"> @else <li> @endif
-                        <a href="{{ route('admin::kontak') }}"><i class="fa fa-flask fa-fw"></i>Kontak</a>
-                    </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-table fa-fw"></i>Tracer Study</a>
                     </li>

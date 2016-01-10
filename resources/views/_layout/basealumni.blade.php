@@ -11,7 +11,8 @@
     <script type="text/javascript" src="{{ asset('themes/js/bootstrap-3.1.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('themes/js/holder.js')}}"></script>
     <script type="text/javascript" src="{{ asset('themes/js/dropdowns-enhancement.js')}}"></script>
-
+ <script src="{{ asset('admin/assets/js/tinymce/tinymce.min.js')}}"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 
     <div id="navtop" class="navbar navbar-inverse" role="navigation">
     @include('include/navbar')
@@ -41,7 +42,7 @@
           <li><a href="{{ route('home::home')}}">Home</a></li>
           <li><a href="{{ route('home::tracerstudy') }}">Form Tarcer Study</a></li>
           <li><a href="{{ route('home::beritaAlumni') }}">Berita</a></li>
-          <li><a href="{{ route('home::komentarAlumni') }}">Komentar</a></li>
+          <li><a href="{{ route('home::saranAlumni') }}">Saran</a></li>
           <li><a href="{{ route('home::laporanAlumni') }}">Laporan </a></li>
           <li><a href="{{ route('home::settingAlumni')}}">Setting Profile</a></li>
           <li><a href="{{ route('getLogout')}}">Logout</a></li>
