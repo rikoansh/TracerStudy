@@ -286,10 +286,35 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
                 'as' => 'transfer', 'uses' => 'FakultasController@transfer'
             ]);
 
+        Route::get('dashboardFakultas/maba', [
+                'as' => 'data_maba', 'uses' => 'FakultasController@data_maba'
+            ]);
+
+        Route::get('dashboardFakultas/maba/{nama}', [
+                'as' => 'transfer_data', 'uses' => 'FakultasController@transfer_data'
+            ]);
+
+        Route::post('dashboardFakultas/maba/{nama}', [
+                'as' => 'simpan_data', 'uses' => 'FakultasController@simpan_data'
+            ]);
+
+        Route::get('dashboardFakultas/alumni', [
+                'as' => 'data_alumni', 'uses' => 'FakultasController@data_alumni'
+            ]);
+
+        Route::get('dashboardFakultas/alumni/{nama}', [
+                'as' => 'ubah_alumni', 'uses' => 'FakultasController@ubah_alumni'
+            ]);
+
+        Route::patch('dashboardFakultas/alumni/{nama}', [
+                'as' => 'update_alumni', 'uses' => 'FakultasController@update_alumni'
+            ]);
+
         #saran
         Route::get('dashboardFakultas/saran', [
                 'as' => 'saran', 'uses' => 'FakultasController@saran'
             ]);
+
         #hasil
         Route::get('dashboardFakultas/hasil', [
                 'as' => 'hasil', 'uses' => 'FakultasController@hasil'

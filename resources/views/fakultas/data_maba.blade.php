@@ -1,6 +1,6 @@
 @extends('_layout/baseFakultas')
 
-@section('title','berita')
+@section('title','data maba')
 
 @section('isi')
 
@@ -20,7 +20,7 @@
                     <span class="caret"></span>
                 </button>
                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="{{ route('fakultas::tambah_berita')}}">Tambah Berita</a>
+                    <li><a href="{{ route('fakultas::transfer_data')}}">Transfer Data</a>
                     </li>
                     <li><a href="#">Action 2</a>
                     </li>
@@ -42,30 +42,21 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul</th>
-                                <th>Isi</th>
-                                <th>Gambar</th>
-                                <th>Slug</th>
+                                <th>NIM</th>
+                                <th>Nama</th>
+                                <th>Prodi</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                          @foreach ($berita as $pengguna)
+                          @foreach ($maba as $pengguna)
                             <tr class="success">
                                 <td>{{ $no++}}</td>
-                                <td>{{ $pengguna->judul }}</td>
-                                <td>{{ $pengguna->isi }}</td>
-                                <td><center><img src="{{ asset($pengguna->gambar) }}" alt="" style="width:200px; height=200px;"/></center></td>
-                                <td>{{ $pengguna->slug }}</td>
+                                <td>{{ $pengguna->nim }}</td>
+                                <td>{{ $pengguna->nama }}</td>
+                                <td>{{ $pengguna->prodi }}</td>
                                 <td style="text-align:center">
-                                    <form method="POST" action="{{ route('fakultas::hapus_berita', $pengguna->id) }}" accept-charset="UTF-8" style="margin:0 auto" >
-                                        <a href="{{ route('fakultas::ubah_berita',$pengguna->id)}}" class="btn btn-primary">Edit</a> ||
-
-                                        <input name="_method" type="hidden" value="delete">
-                                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                        <input id="confirm" class="btn btn-warning" data-toogle="confirmation" 
-                                            data-popout="true" type="submit" value="hapus">
-                                    </form>
+                                    <a href="{{ route('fakultas::transfer_data',$pengguna->nama)}}" class="btn btn-primary">Transfer</a>
                                 </td>
                             </tr>
                             @endforeach</tbody>

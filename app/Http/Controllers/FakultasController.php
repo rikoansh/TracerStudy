@@ -8,6 +8,7 @@ use App\User;
 use App\Ts;
 use App\Maba;
 use App\Kontak;
+use App\Alumni;
 use App\Berita;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
@@ -193,6 +194,61 @@ public function user()
 		$no = 1;
 		return view('fakultas/transfer',compact('no'));
 	}
+
+	public function data_maba()
+	{	
+		$no = 1;
+		$maba = Maba::where('fakultas', '=', 'Teknik')->orderBy('prodi', 'asc')->get();
+		return view('fakultas/data_maba',compact('maba','no'));
+	}
+
+	public function transfer_data($nama)
+	{	
+		$no = 1;
+		$tes = Maba::whereNama($nama)->firstOrFail();
+		return view('fakultas/transfer_data',compact('maba','tes','no'));
+	}
+
+	public function simpan_data(Request $request)
+	{	
+		$input = $request->all();
+        Alumni::create($input);
+        return redirect()->route('fakultas::data_maba');
+	}
+
+	public function data_alumni()
+	{	
+		$no = 1;
+		$alumni = Alumni::orderBy('prodi', 'asc')->get();
+		return view('fakultas/data_alumni',compact('alumni','no'));
+	}
+
+	public function ubah_alumni($nama)
+    {
+        $alumni = Alumni::whereNama($nama)->firstOrFail();
+        return view('fakultas/ubah_alumni', compact('alumni'));
+    }
+
+    public function update_alumni(Request $request, $nama)
+	{	
+		$alumni = Alumni::whereNama($nama)->firstOrFail();
+		$input = $request->all();
+		
+		try 
+		{
+		$alumni->update($input);
+		} 
+		catch (QueryException $e) {
+		    return redirect()->back()
+		    ->with('gagal', 'Gagal Mengupdate');
+		}
+		return redirect()->route('fakultas::data_alumni')
+		->with('pesan', 'Status telah berhasil di update.');
+
+		
+	}
+
+
 ########################################################################################################################################
 
 	public function saran()

@@ -26,7 +26,7 @@
                             <h3>1200 Mahasiswa</h3>
                         </div>
                         <div class="panel-footerpakai">
-                            <button type="button" class="btn btn-outline btn-warning btn-block">Data Mahasiswa</button>
+                             <a type="button" class="btn btn-outline btn-warning btn-block" href="{{ route('fakultas::data_maba') }}">Data Mahasiswa</a>
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@
                             <h3>800 Alumni</h3>
                         </div>
                         <div class="panel-footerpakai">
-                            <button type="button" class="btn btn-outline btn-info btn-block">Data Alumni</button>
+                            <a type="button" class="btn btn-outline btn-warning btn-block" href="{{ route('fakultas::data_alumni') }}">Data Alumni</a>
                         </div>
                     </div>
 
