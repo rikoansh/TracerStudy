@@ -188,6 +188,34 @@ public function user()
 		return view('fakultas/kartu',compact('no'));
 	}
 
+	public function searchkartu(Request $request)
+	{
+		$nim = $request->input('nim');
+		$mahasiswa = Alumni::whereNim($nim)->first();
+		
+		if(!$mahasiswa)
+		{
+			return redirect()->route('kartu');
+		}
+
+		else
+		{
+			$name = $mahasiswa->nim;
+
+			return redirect()->route('fakultas::hasillkartu', compact('name'));
+		}
+	}
+
+	public function hasilkartu($name)
+	{
+	
+		$alumni = Alumni::whereNim($name)->firstorFail();
+		// dd($mahasiswa);
+		return view('fakultas/hasilkartu',compact('alumni'));
+	}
+
+		
+
 ############################################################################################################################################
 	public function transfer()
 	{
@@ -244,7 +272,6 @@ public function user()
 		}
 		return redirect()->route('fakultas::data_alumni')
 		->with('pesan', 'Status telah berhasil di update.');
-
 		
 	}
 

@@ -17,16 +17,16 @@
                         </div>
                         <div class="panel-body">
                             <p>Masukan NIM/Nomor Identitas Alumni untuk melakukan printout Kartu Alumni</p>
+                            <form action="{{ route('fakultas::searchkartu')}}" method="POST" accept-charset="UTF-8" enctype ="multipart/form-data"  class="navbar-form navbar-right">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="form-group">
+                                            <label>Masukkan NIM</label>
+                                            <input type="text" class="form-control" name="nim" value="{{ old('nim') }}"placeholder="Enter nim">
+                                        </div>
+                            </form>
 
-                            <div class="alert alert-warning text-center">
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            </div>
                         </div>
                     </div>
+
+                   
 @stop

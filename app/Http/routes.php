@@ -262,6 +262,14 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
                 'as' => 'kartu', 'uses' => 'FakultasController@kartu'
             ]);
 
+        Route::post('dashboardFakultas/searchkartu', [
+                'as' => 'searchkartu', 'uses' => 'FakultasController@searchkartu'
+            ]);
+
+        Route::get('dashboardFakultas/hasilkartu/{nama}', [
+                'as' => 'hasillkartu', 'uses' => 'FakultasController@hasilkartu'
+            ]);
+
         #berita
          Route::get('dashboardFakultas/berita', [
                 'as' => 'berita', 'uses' => 'FakultasController@berita'
