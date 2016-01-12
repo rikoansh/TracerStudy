@@ -270,6 +270,10 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
                 'as' => 'hasillkartu', 'uses' => 'FakultasController@hasilkartu'
             ]);
 
+        Route::get('dashboardFakultas/hasilkartu/print/{nama}', [
+                'as' => 'print', 'uses' => 'FakultasController@printa'
+            ]);
+
         #berita
          Route::get('dashboardFakultas/berita', [
                 'as' => 'berita', 'uses' => 'FakultasController@berita'

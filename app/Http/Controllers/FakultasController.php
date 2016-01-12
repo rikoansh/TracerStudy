@@ -19,6 +19,7 @@ use App\Http\Requests\UbahPasswordRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
+use PDF;
 use App\Role;
 class FakultasController extends Controller
 {
@@ -206,21 +207,30 @@ public function user()
 		}
 	}
 
-	public function hasilkartu($name)
+	public function hasilkartu($nama)
 	{
-	
-		$alumni = Alumni::whereNim($name)->firstorFail();
+		
+		$alumni = Alumni::whereNim($nama)->firstorFail();
 		// dd($mahasiswa);
 		return view('fakultas/hasilkartu',compact('alumni'));
 	}
 
-		
+	public function printa($nama)
+	{
+		$no = 1;
+		$alumni = Alumni::whereNama($nama)->firstorFail();
+		$pdf = PDF::loadView('fakultas/print',compact('alumni','no'))->setPaper('A4')->setOrientation('landscape');
+		return $pdf->stream('kartu.pdf'); //menampilkan pdf nya (jika di download)
+	}
+
 
 ############################################################################################################################################
 	public function transfer()
 	{
+		$mahasiswa = Maba::where('Fakultas','=','Teknik')->count();
+		$alumni = Alumni::where('Fakultas','=','Teknik')->count();
 		$no = 1;
-		return view('fakultas/transfer',compact('no'));
+		return view('fakultas/transfer',compact('no','mahasiswa','alumni'));
 	}
 
 	public function data_maba()

@@ -5,3 +5,6 @@
     
     {{$alumni->nama}}
 </div>
+
+<a class="btn btn-primary lebar" href="{{ route('fakultas::print', $alumni->nama) }}">Print</a>
+

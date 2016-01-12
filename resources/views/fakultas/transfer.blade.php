@@ -23,7 +23,7 @@
                     <div class="panel panel-primary text-center no-boder">
                         <div class="panel-body yellow">
                             <i class="fa fa-bar-chart-o fa-3x"></i>
-                            <h3>1200 Mahasiswa</h3>
+                            <h3>{{($mahasiswa)}} Mahasiswa</h3>
                         </div>
                         <div class="panel-footerpakai">
                              <a type="button" class="btn btn-outline btn-warning btn-block" href="{{ route('fakultas::data_maba') }}">Data Mahasiswa</a>
@@ -33,7 +33,7 @@
                     <div class="panel panel-primary text-center no-boder">
                         <div class="panel-body blue">
                             <i class="fa fa-pencil-square-o fa-3x"></i>
-                            <h3>800 Alumni</h3>
+                            <h3>{{ ($alumni)}} Alumni</h3>
                         </div>
                         <div class="panel-footerpakai">
                             <a type="button" class="btn btn-outline btn-warning btn-block" href="{{ route('fakultas::data_alumni') }}">Data Alumni</a>
