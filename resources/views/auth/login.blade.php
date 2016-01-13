@@ -14,7 +14,7 @@
                     <input type="text" name="username" value="{{ old('username') }}" placeholder="Email" required class="form-control input-lg" />
                     <input type="password" name="password" placeholder="Password" required class="form-control input-lg" />
 
-                    <input type="checkbox" name="remember" value="1" /> Remember me<br />
+                    <input type="checkbox" name="remember"  /> Remember me<br />
                     <input type="checkbox" name="tos" value="1" /> You agree to <a href="#" class="text-primary">Terms</a> and
                     <a href="#" class="text-primary">Privacy Policy</a>
 

@@ -180,7 +180,10 @@ public function user()
 	public function hasil()
 	{
 		$no = 1;
-		return view('fakultas/hasil',compact('no'));
+		$mahasiswa = Maba::where('Fakultas','=','Teknik')->count();
+		$alumni = Alumni::where('Fakultas','=','Teknik')->count();
+		
+		return view('fakultas/hasil',compact('no','mahasiswa','alumni'));
 	}
 #####################################################################################################################
 	public function kartu()
