@@ -21,8 +21,6 @@ Route::get('/', [
 
 
 
-
-
 Route::group(['as' => 'home::', 'middleware' => ['role:mahasiswa']], function () {
         
         Route::get('home', [
@@ -262,12 +260,8 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
                 'as' => 'kartu', 'uses' => 'FakultasController@kartu'
             ]);
 
-        Route::post('dashboardFakultas/searchkartu', [
+        Route::get('dashboardFakultas/searchkartu', [
                 'as' => 'searchkartu', 'uses' => 'FakultasController@searchkartu'
-            ]);
-
-        Route::get('dashboardFakultas/hasilkartu/{nama}', [
-                'as' => 'hasillkartu', 'uses' => 'FakultasController@hasilkartu'
             ]);
 
         Route::get('dashboardFakultas/hasilkartu/print/{nama}', [
@@ -322,14 +316,26 @@ Route::group(['as' => 'fakultas::', 'middleware' => ['role:fakultas']], function
                 'as' => 'update_alumni', 'uses' => 'FakultasController@update_alumni'
             ]);
 
+        #email
+         Route::get('dashboardFakultas/alumniEmail/{nama}', [
+                'as' => 'email_alumni', 'uses' => 'FakultasController@email_alumni'
+            ]);
+
         #saran
         Route::get('dashboardFakultas/saran', [
                 'as' => 'saran', 'uses' => 'FakultasController@saran'
             ]);
 
+         Route::delete('dashboardFakultas/saran/{id}', [
+            'as' => 'hapus_saran', 'uses' => 'FakultasController@hapus_saran']);
+
         #hasil
         Route::get('dashboardFakultas/hasil', [
                 'as' => 'hasil', 'uses' => 'FakultasController@hasil'
+            ]);
+
+        Route::get('dashboardFakultas/hasil/get', [
+                'as' =>'getHasilData', 'uses'=>'FakultasController@getHasilData'
             ]);
 });
 

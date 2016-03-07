@@ -41,6 +41,7 @@
                                 <td>{{ $pengguna->prodi }}</td>
                                 <td style="text-align:center">
                                     <a href="{{ route('fakultas::ubah_alumni',$pengguna->nama)}}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('fakultas::email_alumni',$pengguna->nama)}}" class="btn btn-primary">Email</a>
                                 </td>
                             </tr>
                             @endforeach</tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 use Illuminate\Contracts\Encryption\DecryptException;
 use App\User;
 use App\Ts;
@@ -178,13 +179,23 @@ public function user()
 
 ###################################################################################################################################
 	public function hasil()
-	{
-		$no = 1;
-		$mahasiswa = Maba::where('Fakultas','=','Teknik')->count();
-		$alumni = Alumni::where('Fakultas','=','Teknik')->count();
-		
-		return view('fakultas/hasil',compact('no','mahasiswa','alumni'));
-	}
+    {
+    //
+    //  dd($alumni);
+      return view('fakultas/hasil');
+    }
+
+    public function getHasilData()
+        {
+        $alumni = Alumni::where('tahun_lulus','=','2013')->firstorFail();
+       	$totalalumni = Alumni::where('tahun_lulus','=','2013')->count();
+       	for ($i=0;$i<count($alumni);$i++)
+	       	{
+	       		$data[$i] = array("tahun"=>$alumni[$i], "alumni"=>$totalalumni[$i]);
+	       	}
+	      return $data;
+	     
+        }
 #####################################################################################################################
 	public function kartu()
 	{
@@ -194,7 +205,7 @@ public function user()
 
 	public function searchkartu(Request $request)
 	{
-		$nim = $request->input('nim');
+		/*$nim = $request->input('nim');
 		$mahasiswa = Alumni::whereNim($nim)->first();
 		
 		if(!$mahasiswa)
@@ -207,16 +218,21 @@ public function user()
 			$name = $mahasiswa->nim;
 
 			return redirect()->route('fakultas::hasillkartu', compact('name'));
-		}
+		}*/
+
+		$query = $request->get('cari');
+		$title = 'Search Results';
+     	$results = Alumni::where('fakultas', 'LIKE', '%' . $query . '%')->get();
+     	 return view('fakultas/hasilkartu', compact('title', 'query','results'));
 	}
 
-	public function hasilkartu($nama)
+	/*public function hasilkartu($nama)
 	{
 		
 		$alumni = Alumni::whereNim($nama)->firstorFail();
 		// dd($mahasiswa);
 		return view('fakultas/hasilkartu',compact('alumni'));
-	}
+	}*/
 
 	public function printa($nama)
 	{
@@ -261,6 +277,8 @@ public function user()
 	{	
 		$no = 1;
 		$alumni = Alumni::orderBy('prodi', 'asc')->get();
+		
+
 		return view('fakultas/data_alumni',compact('alumni','no'));
 	}
 
@@ -288,6 +306,14 @@ public function user()
 		
 	}
 
+	public function email_alumni(Request $request, $nama)
+	{	
+		$user = Alumni::whereNama($nama)->firstorFail();
+        Mail::send('fakultas/email_alumni', ['email' => $user], function ($m) use ($user) {
+            $m->to($user->email, $user->nama);
+        });
+	}
+	
 
 ########################################################################################################################################
 
@@ -298,4 +324,11 @@ public function user()
 		return view('fakultas/saran',compact('kontak','no'));
 	}
 
+	public function hapus_saran($id)
+	{
+		$pengguna = Saran::whereId($id)->firstOrFail();
+		$pengguna->delete();
+
+		return redirect()->route('fakultas::saran');
+	}
 }

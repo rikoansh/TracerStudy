@@ -15,12 +15,9 @@
    
     <script src="{{ asset('admin/assets/js/tinymce/tinymce.min.js')}}"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
+   
 
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-   </head>
+    
 <body>
     <!--  wrapper -->
     <div id="wrapper">
@@ -121,6 +118,10 @@
         <!-- end page-wrapper -->
 
     </div>
+    @section('js')
+          <script src="{{ asset('js/frontend.js') }}"></script>
+    @show
+
     <!-- end wrapper -->
 
     <!-- Core Scripts - Include with every page -->
@@ -134,6 +135,10 @@
     <script src="{{ asset('admin/assets/plugins/morris/morris.js')}}"></script>
     <script src="{{ asset('admin/assets/scripts/dashboard-demo.js')}}"></script>
 
+     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
 </body>
 
 </html>

@@ -37,4 +37,29 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function Karakteristik()
+    {
+        return $this->hasMany('App\Karakteristik','id_users');
+    }
+
+    public function Kegiatan()
+    {
+        return $this->hasMany('App\Kegiatan','id_users');
+    }
+
+    public function DuniaKerja()
+    {
+        return $this->hasMany('App\DuniaKerja','id_users');
+    }
+
+    public function Pekerjaan()
+    {
+        return $this->hasMany('App\Pekerjaan','id_users');
+    }
+
+    public function Kompetensi()
+    {
+        return $this->hasMany('App\Kompetensi','id_users');
+    }
 }

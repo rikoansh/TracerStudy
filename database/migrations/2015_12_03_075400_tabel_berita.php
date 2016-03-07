@@ -19,7 +19,6 @@ class TabelBerita extends Migration
             $table->text('penulis');
             $table->string('slug');
             $table->text('gambar');
-            
             $table->timestamps();
         });
     }

@@ -43,9 +43,9 @@
 			                             <input type="hidden" name="fakultas" value="{{ $tes->fakultas }}">
                                         
                                         <div class="form-group">
-			                              <label >NIM</label>
-			                                <input class="form-control disabled"  type="text" name="nim" 
-			                                 placeholder="{{($tes->nim)}}"disabled>
+			                              <label >email</label>
+			                                <input class="form-control "  type="email" name="email" 
+			                                 placeholder="{{($tes->email)}}">
 			                            </div>
 
                                         <div class="form-group">

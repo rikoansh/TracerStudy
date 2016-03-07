@@ -87,6 +87,8 @@ $(function () {
     });
 });
 </script>
-
+@section('js')
+          <script src="{{ asset('js/frontend.js') }}"></script>
+    @show
   </body>
 </html>
